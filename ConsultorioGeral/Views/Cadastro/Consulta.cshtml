@@ -1,0 +1,102 @@
+﻿@model Consulta
+@{
+    ViewData["Title"] = "Consulta";
+}
+
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="images/icons/back.svg">
+                </a>
+                <img src="images/logo.svg">
+            </div>
+
+            <div class="header-content">
+                <strong> Consulta </strong>
+
+            </div>
+        </header>
+
+        <main>
+
+            <form action="" id="create-class">
+
+                <fieldset>
+                    <legend> Seus dados </legend>
+
+                    <div class="input-block">
+                        <label asp-for="Cpf" class="cpf"> CPF <small>(somente números)</small> </label>
+                        <input asp-for="Cpf" id="cpf" type="number" required>
+                    </div>
+
+                    <div class="textarea-block">
+                        <label asp-for="Sintomas"> Sintomas </label>
+                        <textarea asp-for="Sintomas" id="sintomas"></textarea>
+                    </div>
+
+                    <div class="select-block">
+                        <label asp-for="MedicoEsp"> Especialista </label>
+                        <select asp-for="MedicoEsp" id="especialista" required>
+                            <option value=""> Selecione uma opção </option>
+                            <option value="1">Clínico geral</option>
+                            <option value="2">Neurologista</option>
+                            <option value="3">Pediatra</option>
+                            <option value="4">Fisioterapeuta</option>
+
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+
+                <fieldset>
+
+                    <legend>
+                        Horários disponíveis
+                       
+                    </legend>
+                    <div class="schedule-item">
+                        <div class="select-block">
+                            <label for="weekday"> Dia da semana </label>
+                            <select name="weekday[]" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="0">Domingo</option>
+                                <option value="1">Segunda</option>
+                                <option value="2">Terça</option>
+                                <option value="3">Quarta</option>
+                                <option value="4">Quinta</option>
+                                <option value="5">Sexta</option>
+                                <option value="6">Sabádo</option>
+
+                            </select>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_from"> Horário </label>
+                            <input type="time" name="time_from[]" required>
+                        </div>
+
+
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <footer>
+
+                <p>
+                    <img src="#" alt="aviso">
+                    Importante! <br>
+                    Preencha todos os dados
+                </p>
+                <button type="submit" form="create-class"> Marcar consulta </button>
+
+            </footer>
+
+
+        </main>
+        </div>
+    </body>

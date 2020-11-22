@@ -1,0 +1,691 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/* Inicio style.css*/
+:root {
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+    font-size: 60%;
+    /* controle das medidas rem */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+    font-family: Poppins;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--color-text-base);
+}
+
+#container {
+    width: 90vw;
+    max-width: 700px;
+}
+
+@media(min-width:700px) {
+    :root {
+        font-size: 62.5%;
+    }
+}
+/* Inicio page-study*/
+
+#page-study #container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search-teachers {
+    margin-top: 3.2rem;
+}
+
+    #search-teachers label {
+        color: var(--color-text-in-primary);
+    }
+
+    #search-teachers .select-block {
+        margin-bottom: 1.4rem;
+    }
+
+    #search-teachers button {
+        width: 100%;
+        height: 5.6rem;
+        background: var(--color-secondary);
+        color: var(--color-button-text);
+        border: 0;
+        border-radius: .8rem;
+        cursor: pointer;
+        font: 700 1.6rem Archivo;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background 0.2s;
+        margin-top: 3.2rem;
+    }
+
+        #search-teachers button:hover {
+            background-color: var(--color-secondary-dark);
+        }
+
+#page-study main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+.teacher-item {
+    background-color: #fff;
+    border: 1px solid #E6E6F0;
+    border-radius: 0.8rem;
+    margin-top: 2.4rem;
+}
+
+    .teacher-item header {
+        padding: 3.2rem 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+        .teacher-item header img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+        }
+
+        .teacher-item header div {
+            margin-left: 2.4rem;
+        }
+
+            .teacher-item header div strong {
+                font: 700 2.4rem Archivo;
+                display: block;
+                color: var(--color-text-title);
+            }
+
+            .teacher-item header div span {
+                font-size: 1.6rem;
+                display: block;
+                margin-top: .4rem;
+            }
+
+    .teacher-item > p {
+        padding: 0 2rem;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+    }
+
+    .teacher-item footer {
+        padding: 3.2rem 2rem;
+        background-color: var(--color-boxx-footer);
+        border-top: 1px solid var(--color-line-in-white);
+        margin-top: 3.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .teacher-item footer p {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            color: var(--color-text-complement)
+        }
+
+        .teacher-item footer strong {
+            font-size: 1.6rem;
+            display: block;
+            color: var(--color-primary)
+        }
+
+        .teacher-item footer button {
+            width: 20rem;
+            height: 5.6rem;
+            background: var(--color-secondary);
+            color: var(--color-button-text);
+            border: 0;
+            border-radius: .8rem;
+            cursor: pointer;
+            font: 700 1.4rem Archivo;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            text-decoration: none;
+            transition: background 0.2s;
+            margin-left: 1.6rem;
+        }
+
+            .teacher-item footer button:hover {
+                background: var(--color-secondary-dark);
+            }
+
+@media (min-width:700px) {
+    #page-study #container {
+        max-width: 100vw;
+    }
+
+    .page-header {
+        height: 340px;
+    }
+
+        .page-header .top-bar-container {
+            max-width: 1100px;
+        }
+
+        .page-header .header-content {
+            max-width: 740px;
+            margin: 0 auto;
+            flex: 1 1;
+            padding-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .page-header .header-content strong {
+                max-width: 350px;
+            }
+
+    .teacher-item header,
+    .teacher-tem footer {
+        padding: 32px;
+    }
+
+    #search-teachers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: absolute;
+        bottom: -28px;
+    }
+
+    #page-study main {
+        padding: 32px 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    #search-teachers .select-block {
+        margin-bottom: 0;
+    }
+
+    .teacher-item footer p strong {
+        display: initial;
+        margin-left: 16px;
+    }
+
+    .teacher-item > p {
+        padding: 0 32px;
+    }
+}
+/* Inicio site.css*/
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+    background-color: var(--color-background);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Inicio header */
+
+.page-header {
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+    .page-header .top-bar-container {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 1.6rem 0;
+    }
+
+        .page-header .top-bar-container > img {
+            height: 1.6rem;
+        }
+
+        .page-header .top-bar-container a {
+            height: 3.2rem;
+            transition: opacity 0.2s;
+        }
+
+            .page-header .top-bar-container a:hover {
+                height: 3.2rem;
+                transition: opacity 0.6s;
+            }
+
+    .page-header .header-content {
+        width: 90%;
+        margin: 3.2rem auto;
+        position: relative;
+    }
+
+        .page-header .header-content strong {
+            font: 700 3.6rem Archivo;
+            line-height: 4.2rem;
+            color: var(--color-title-in-primary);
+        }
+
+        .page-header .header-content p {
+            max-width: 30rem;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            color: var(--color-text-in-primary);
+            margin-top: 2.4rem;
+        }
+
+@media (min-width:700px) {
+    .page-header {
+        height: 340px;
+    }
+
+        .page-header .top-bar-container {
+            max-width: 1100px;
+        }
+
+        .page-header .header-content {
+            max-width: 740px;
+            margin: 0 auto;
+            flex: 1 1;
+            padding-bottom: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .page-header .header-content strong {
+                max-width: 350px;
+            }
+}
+
+/* Inicio forms*/
+
+.select-block label,
+.input-block label,
+.textarea-block label {
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+.input-block input,
+.select-block select,
+.textarea-block textarea {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6 Archivo;
+}
+
+.textarea-block textarea {
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+    resize: vertical;
+}
+
+/* Inicio page give classes */
+
+#page-give-classes #container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-give-classes .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
+
+#page-give-classes main {
+    background: var(--color-box-base);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: .8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+}
+
+#page-give-classes fieldset {
+    border: none;
+    padding: 0 2.4rem;
+}
+
+    #page-give-classes fieldset legend {
+        font: 700 2.4rem Archivo;
+        color: var(--color-text-title);
+        margin-bottom: 2.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid var(--color-line-in-white);
+    }
+
+        #page-give-classes fieldset legend button {
+            background: none;
+            border: 0;
+            color: var(--color-primary);
+            font: 700 1.6rem Archivo;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+            #page-give-classes fieldset legend button:hover {
+                color: var(--color-primary-dark);
+                transform: translateY(-5px);
+            }
+
+    #page-give-classes fieldset + fieldset {
+        margin-top: 6.4rem;
+    }
+
+#page-give-classes main fieldset .input-block + .input-block,
+#page-give-classes main fieldset .input-block + .textarea-block,
+#page-give-classes main fieldset .select-block + .input-block {
+    margin-top: 2.4rem;
+}
+
+#page-give-classes main footer {
+    padding: 4rem 2.4rem;
+    background: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    margin-top: 6.4rem;
+}
+
+    #page-give-classes main footer p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: var(--color-text-complement);
+    }
+
+        #page-give-classes main footer p img {
+            margin-right: 2rem;
+        }
+
+.schedule-item + .schedule-item {
+    margin-top: 3.2rem;
+    border-top: 1px solid var(--color-line-in-white);
+    padding-top: 3.2rem;
+}
+
+#page-give-classes main footer button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s;
+    margin-top: 3.2rem;
+}
+
+@media(min-width: 700px) {
+    #page-give-classes #container {
+        max-width: 100vw;
+    }
+
+    #page-give-classes .page-header .header-content {
+        margin-bottom: 0;
+    }
+
+    #page-give-classes main fieldset {
+        padding: 0 64px;
+    }
+
+    .schedule-item {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.6rem;
+    }
+
+        .schedule-item .input-block {
+            margin-top: 0 !important;
+        }
+
+    #page-give-classes main footer button {
+        margin-top: 0;
+        width: 200px;
+    }
+
+    #page-give-classes main footer {
+        padding: 40px 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Inicio page landing */
+
+#page-landing {
+    background: var(--color-primary);
+    margin-top: 50px;
+}
+
+    #page-landing #container {
+        color: var(--color-text-in-primary);
+    }
+
+.logo-container img {
+    height: 10rem;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+    .logo-container h2 {
+        font-weight: 500;
+        font-size: 3.6rem;
+        line-height: 4.6rem;
+        margin-top: 0.8rem;
+    }
+
+.hero-image {
+    width: 100%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+    .buttons-container a {
+        width: 25rem;
+        height: 10.4rem;
+        border-radius: 0.8rem;
+        margin-right: 1.6rem;
+        font: 700 2.4 Archivo;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--color-button-text);
+        transition: background 0.2s;
+    }
+
+        .buttons-container a img {
+            width: 3rem;
+            margin-right: 2.4rem;
+        }
+
+        .buttons-container a.study {
+            background: var(--color-primary-lighter);
+        }
+
+        .buttons-container a.give-classes {
+            background: var(--color-secondary);
+            margin-right: 0;
+        }
+
+        .buttons-container a.study:hover {
+            background: var(--color-primary-light);
+        }
+
+        .buttons-container a.give-classes:hover {
+            background: var(--color-secondary-dark);
+        }
+
+.total-connections {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .total-connections img {
+        margin-left: 0.8rem;
+    }
+
+@media(max-width:699px) {
+    :root {
+        font-size: 40%;
+    }
+}
+
+@media(min-width: 1100px) {
+    #page-landing #container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: "proffy image image" "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+    }
+
+    .logo-container {
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+
+        .logo-container img {
+            height: 100%;
+        }
+
+    .hero-image {
+        grid-area: image;
+    }
+
+    .buttons-container {
+        grid-area: button;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .button-connections {
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+}
