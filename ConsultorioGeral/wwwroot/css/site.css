@@ -1,6 +1,4 @@
-﻿
-
-/* Inicio style.css*/
+﻿/* Inicio style.css*/
 :root {
     --color-background: #F0F0F7;
     --color-primary-lighter: #9871F5;
@@ -351,10 +349,10 @@ textarea {
 }
 
     .buttons-container a {
-        width: 25rem;
+        width: 15rem;
         height: 10.4rem;
         border-radius: 0.8rem;
-        margin-right: 1.6rem;
+        /*margin-right: 1.6rem;*/
         font: 700 2.4 Archivo;
         display: flex;
         align-items: center;
@@ -362,6 +360,7 @@ textarea {
         text-decoration: none;
         color: var(--color-button-text);
         transition: background 0.2s;
+        margin-left:10px;
     }
 
         .buttons-container a img {
@@ -386,16 +385,7 @@ textarea {
             background: var(--color-secondary-dark);
         }
 
-.total-connections {
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-    .total-connections img {
-        margin-left: 0.8rem;
-    }
 
 @media(max-width:699px) {
     :root {

@@ -58,6 +58,10 @@ namespace ConsultorioGeral
                 pattern: "{controller=Cadastro}/{action=Paciente}/{id?}");
 
                 endpoints.MapControllerRoute(
+                name: "medico",
+                pattern: "{controller=Home}/{action=Medico}/{id?}");
+
+                endpoints.MapControllerRoute(
                 name: "consulta",
                 pattern: "{controller=Cadastro}/{action=Consulta}/{id?}");
 
