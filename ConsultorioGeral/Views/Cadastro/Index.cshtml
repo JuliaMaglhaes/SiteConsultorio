@@ -1,10 +1,12 @@
-﻿@model IEnumerable<Paciente>
+﻿@model IEnumerable<ConsultorioGeral.Models.Paciente>
 
-<div class="card-block">
-    <div class="card-header text-white bg-primary text-center h1">
-        Pacientes registrados
-    </div>
-</div>
+@{
+    ViewData["Title"] = "Pacientes cadastrados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cadastro de pacientes</h1>
+
 <div class="card-body">
     <table manifest="tabela_pacientes">
         <thread>
