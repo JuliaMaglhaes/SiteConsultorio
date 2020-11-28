@@ -28,73 +28,71 @@
                     <legend> Seus dados </legend>
 
                     <div class="input-block">
-                        <label asp-for="Nome" class="nome"> Nome completo </label>
-                        <input asp-for="Nome" id="name" required>
+                        <label asp-for="Nome" class="control-label"> Nome completo </label>
+                        <input asp-for="Nome" type="text" class="control-label" id="nomePaciente" name="nomePaciente"
+                               placeholder="Nome do Paciente" required>
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Cpf" class="cpf"> CPF <small>(somente números)</small> </label>
-                        <input asp-for="Cpf" id="cpf" type="number" required>
+                        <label asp-for="Cpf" class="control-label"> CPF <small>(somente números)</small> </label>
+                        <input asp-for="Cpf" id="cpf" class="control-label" type="number" required>
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Idade" class="idade"> Idade  </label>
+                        <label asp-for="Idade" class="control-label"> Idade  </label>
                         <input asp-for="Idade" id="idade" type="number" required>
                     </div>
 
                     <div class="select-block">
-                        <label asp-for="Sexo"> Sexo </label>
+                        <label asp-for="Sexo" class="control-label"> Sexo </label>
                         <select asp-for="Sexo" id="sexo" required>
                             <option value=""> Selecione uma opção </option>
                             <option value="1">Feminino</option>
                             <option value="2">Masculino</option>
                             <option value="3">Outro</option>
-                           
+
                         </select>
 
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Telefone" class="telefone"> Telefone <small>(somente números)</small> </label>
+                        <label asp-for="Telefone" class="control-label"> Telefone <small>(somente números)</small> </label>
                         <input asp-for="Telefone" id="telefone" type="number" required>
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Email" class="email"> Email  </label>
+                        <label asp-for="Email" class="control-label"> Email  </label>
                         <input asp-for="Email" id="email" type="email" required>
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Endereco" class="endereco"> Endereço  </label>
+                        <label asp-for="Endereco" class="control-label"> Endereço  </label>
                         <input asp-for="Endereco" id="endereco" required>
                     </div>
 
                     <div class="input-block">
-                        <label asp-for="Cep" class="cep"> CEP </label>
+                        <label asp-for="Cep" class="control-label"> CEP </label>
                         <input asp-for="Cep" id="cep" required>
                     </div>
 
 
                 </fieldset>
 
-                
-                
+                <footer>
+
+                    <p>
+                        <img src="~/img/warning.svg" alt="aviso">
+                        Importante! <br>
+                        Preencha todos os dados
+                    </p>
+                    <div class="input-block">
+                        <input type="submit"
+                               class="btn btn-sucess"
+                               value="Finalizar cadastro" />
+                        <a asp-action="Index" class="btn btn-info">Retornar pacientes </a>
+                    </div>
+                </footer>
             </form>
-
-            <footer>
-
-                <p>
-                    <img src="~/img/warning.svg" alt="aviso">
-                    Importante! <br>
-                    Preencha todos os dados
-                </p>
-                <input type="submit"
-                       class="btn btn-sucess"
-                       value="Finalizar cadastro" />
-                <a asp-action="Index" class="btn btn-info">Retornar pacientes </a>
-
-            </footer>
-
 
         </main>
 
