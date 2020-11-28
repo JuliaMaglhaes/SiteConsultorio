@@ -1,33 +1,21 @@
-﻿@model IEnumerable<ConsultorioGeral.Models.Paciente>
+﻿@model IEnumerable<Paciente>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pacientes cadastrados";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 
 <h1>Cadastro de pacientes</h1>
-<p>
-    <a asp-action="Create">Cadastrar novo paciente</a>
-</p>
+
 <div class="card-body">
-    <table class="table">
-        <thead>
+    <table manifest="tabela_pacientes">
+        <thread>
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Nome)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Cpf)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Idade)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Sexo)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Endereco)
@@ -36,11 +24,20 @@
                     @Html.DisplayNameFor(model => model.Cep)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sexo)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idade)
                 </th>
                 <th></th>
             </tr>
-        </thead>
+        </thread>
         <tbody>
             @foreach (var item in Model)
             {
@@ -49,16 +46,7 @@
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Cpf)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Idade)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sexo)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Endereco)
@@ -67,15 +55,22 @@
                         @Html.DisplayFor(modelItem => item.Cep)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Cpf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sexo)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Telefone)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.PacienteId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.PacienteId">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.PacienteId">Delete</a>
+                        @Html.DisplayFor(modelItem => item.Idade)
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    </div>
+</div>
+<div class="card-footer bg-sucess text-center">
+    <a asp-action="Paciente" class="btn-success">Criar um novo paciente</a>
+</div>

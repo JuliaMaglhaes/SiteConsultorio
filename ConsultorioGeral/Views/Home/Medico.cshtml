@@ -1,4 +1,71 @@
 ﻿@model Medico
 @{
-    ViewData["Title"] = "Médicos";
+    ViewData["Title"] = "Cadastrar | Médicos";
 }
+
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="~/img/back.svg">
+                </a>
+                <img src="images/logo.svg">
+            </div>
+
+            <div class="header-content">
+                <strong> Cadastrar um novo Médico </strong>
+                <p> Preencha corretamente todos os dados para evitar problemas </p>
+
+            </div>
+        </header>
+
+        <main>
+            <form action="" id="create-class">
+
+                <fieldset>
+                    <legend> Seus dados </legend>
+
+                    <div class="input-block">
+                        <label asp-for="Nome" class="nome"> Nome completo </label>
+                        <input asp-for="Nome" id="name" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label asp-for="Crm" class="cpf"> CRM <small>(somente números)</small> </label>
+                        <input asp-for="Crm" id="cpf" type="number" required>
+                    </div>
+
+                    <div class="select-block">
+                        <label asp-for="Especialidade"> Especialidade </label>
+                        <select asp-for="Especialidade" id="sexo" required>
+                            <option value=""> Selecione uma opção </option>
+                            <option value="1">Clinico Geral</option>
+                            <option value="2">Pediatra</option>
+                            <option value="3">Outro</option>
+
+                        </select>
+
+                    </div>
+
+
+                </fieldset>
+
+            </form>
+
+            <footer>
+
+                <p>
+                    <img src="~/img/warning.svg" alt="aviso">
+                    Importante! <br>
+                    Preencha todos os dados
+                </p>
+                <input type="submit"
+                       class="btn btn-sucess"
+                       value="Cadastrar Médico" />
+                <a asp-action="Index" class="btn btn-info">Visualizar Médicos </a>
+
+            </footer>
+        </main>
+    </div>
+</body>

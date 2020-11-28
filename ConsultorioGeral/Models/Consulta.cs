@@ -7,7 +7,7 @@ namespace ConsultorioGeral.Models
 {
     public class Consulta
     {
-        public DateTime Horário { get; }
+        public DateTime Horário { get; set ;}
         public DateTime Dia { get; set; }
         public string Sintomas { get; set; }
         public string Cpf { get; set; }
