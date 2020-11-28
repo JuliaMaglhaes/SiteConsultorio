@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ConsultorioGeral.Data;
+using ConsultorioGeral.Controllers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsultorioGeral
 {
@@ -13,7 +16,23 @@ namespace ConsultorioGeral
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<PacienteContext>();
+                    PacienteDbInitializer.Initialize(context);
+                }
+                catch (Exception e)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(e, "Um erro ao criar a base de dados");
+                }
+                host.Run();
+
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

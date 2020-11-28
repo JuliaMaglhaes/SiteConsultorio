@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ConsultorioGeral.Models.Paciente>
+
+@{ ViewData["Title"] = "Pacientes cadastrados";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<link rel="stylesheet" type="text/css" href="~/DataTables/datatables.min.css"/>
+<script type="text/javascript" src="~/DataTables/datatables.min.js"></script>
+
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="~/img/back.svg">
+                </a>
+                <img src="images/logo.svg">
+            </div>
+
+            <div class="header-content">
+                <strong> Pacientes Cadastrados </strong>
+                <p>
+                    Estes são todos os pacientes cadastrados em nossa plataforma
+                </p>
+
+            </div>
+
+        </header>
+    </div>
+
+    <div class="card-body">
+        <table id="table_id" class="display">
+            <thead>
+                <thread>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Endereco)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cep)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cpf)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sexo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Idade)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thread>
+            <tbody>
+                @foreach (var item in Model)
+                {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade)
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="card-footer bg-sucess text-center">
+        <a asp-action="Paciente" class="btn-success">Criar um novo paciente</a>
+    </div>
+
+</body>
+

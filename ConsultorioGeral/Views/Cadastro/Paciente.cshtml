@@ -1,21 +1,24 @@
 ﻿@model Paciente
-@{
-    ViewData["Title"] = "Paciente";
-}
+@{ ViewData["Title"] = "Paciente"; }
+
+<link rel="stylesheet" type="text/css" href="~/~DataTables/datatables.min.css/" />
 
 <body id="page-give-classes">
     <div id="container">
         <header class="page-header">
             <div class="top-bar-container">
                 <a href="/">
-                    <img src="images/icons/back.svg">
+                    <img src="~/img/back.svg">
                 </a>
                 <img src="images/logo.svg">
             </div>
 
             <div class="header-content">
                 <strong> Cadastro de Paciente </strong>
-                <p> Preencha corretamente todos os campos </p>
+                <p>
+                    Preencha corretamente os seus
+                    dados para evitar problemas
+                </p>
 
             </div>
         </header>
@@ -26,8 +29,6 @@
 
                 <fieldset>
                     <legend> Seus dados </legend>
-
-
 
                     <div class="input-block">
                         <label asp-for="Nome" class="nome"> Nome completo </label>
@@ -50,8 +51,7 @@
                             <option value=""> Selecione uma opção </option>
                             <option value="1">Feminino</option>
                             <option value="2">Masculino</option>
-                            <option value="3">Outro</option>
-                           
+
                         </select>
 
                     </div>
@@ -79,18 +79,21 @@
 
                 </fieldset>
 
-                
-                
+
+
             </form>
 
             <footer>
 
                 <p>
-                    <img src="images/icons/warning.svg" alt="aviso">
+                    <img src="~/img/warning.svg" alt="aviso">
                     Importante! <br>
                     Preencha todos os dados
                 </p>
-                <button asp-action="Index" type="submit" form="create-class"> Salvar Cadastro </button>
+                <input type="submit"
+                       class="btn btn-sucess"
+                       value="Finalizar cadastro" />
+                <a asp-action="Index" class="btn btn-info">Visualizar Pacientes </a>
 
             </footer>
 
@@ -101,3 +104,5 @@
 
     </div>
 </body>
+
+<script type="text/javascript" src="~DataTables/datatables.min.js"></script>

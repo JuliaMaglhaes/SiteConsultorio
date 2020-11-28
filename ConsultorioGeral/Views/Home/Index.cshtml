@@ -5,28 +5,30 @@
 <body id="page-landing">
     <div id="container">
         <div class="logo-container">
-            <img src="images/logo.svg" alt="Logo">
+            <img src="~/img/Consultorio.png" alt="Logo">
             <h2> Uma plataforma para marcar consultas </h2>
         </div>
-        <img class="hero-image" src="~/img/Online Doctor-bro.svg" alt="Plataforma de estudos">
+        <img class="hero-image" src="~/img/Online Doctor-bro.svg" alt="Plataforma de consultas">
 
         <div class="buttons-container">
             <a class="study"
                asp-area="" asp-controller="Cadastro" asp-action="Paciente">
-
-                Cadastrar
+                Paciente
             </a>
 
-            <a class="give-classes" 
+            <a class="give-classes"
                asp-area="" asp-controller="Cadastro" asp-action="Consulta">
-
                 Marcar consulta
             </a>
-
+            <a class="study"
+               asp-area="" asp-controller="Home" asp-action="Medico">
+                Médico
+            </a>
         </div>
 
     </div>
 
 
 </body>
+
 

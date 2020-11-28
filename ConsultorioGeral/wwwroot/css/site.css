@@ -1,18 +1,16 @@
-﻿
-
-/* Inicio style.css*/
+﻿/* Inicio style.css*/
 :root {
     --color-background: #F0F0F7;
     --color-primary-lighter: #9871F5;
     --color-primary-light: #916BEA;
-    --color-primary: #8257E5;
+    --color-primary: #06C077;
     --color-primary-dark: #774DD6;
     --color-primary-darker: #6842c2;
     --color-secondary: #04D361;
     --color-secondary-dark: #04BF58;
     --color-title-in-primary: #FFFFFF;
-    --color-text-in-primary: #D4C2FF;
-    --color-text-title: #32264D;
+    --color-text-in-primary: #ececec;
+    --color-text-title: #238839;
     --color-text-complement: #9C98A6;
     --color-text-base: #6A6180;
     --color-line-in-white: #E6E6F0;
@@ -168,7 +166,7 @@ textarea {
 /* Inicio page give classes */
 
 #page-give-classes {
-    margin-top: -10%;
+    margin-top: -32px;
     padding-top: 0;
     margin-left: -45.5%;
     overflow-x: hidden;
@@ -277,6 +275,22 @@ textarea {
     margin-top: 3.2rem;
 }
 
+#page-give-classes main footer input {
+    width: 30%;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
 @media(min-width: 700px) {
     #page-give-classes #container {
         max-width: 100vw;
@@ -351,10 +365,10 @@ textarea {
 }
 
     .buttons-container a {
-        width: 25rem;
+        width: 15rem;
         height: 10.4rem;
         border-radius: 0.8rem;
-        margin-right: 1.6rem;
+        /*margin-right: 1.6rem;*/
         font: 700 2.4 Archivo;
         display: flex;
         align-items: center;
@@ -362,6 +376,7 @@ textarea {
         text-decoration: none;
         color: var(--color-button-text);
         transition: background 0.2s;
+        margin-left:10px;
     }
 
         .buttons-container a img {
@@ -386,16 +401,7 @@ textarea {
             background: var(--color-secondary-dark);
         }
 
-.total-connections {
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-    .total-connections img {
-        margin-left: 0.8rem;
-    }
 
 @media(max-width:699px) {
     :root {
