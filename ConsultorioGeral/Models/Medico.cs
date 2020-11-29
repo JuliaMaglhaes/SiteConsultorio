@@ -7,6 +7,7 @@ namespace ConsultorioGeral.Models
 {
     public class Medico
     {
+        public long? MedicoId { get; set; }
         public string Nome { get; set; }
         public string Crm { get; set; }
         public string Especialidade { get; set; }

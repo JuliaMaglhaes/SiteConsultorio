@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ConsultorioGeral.Models.Consulta>
+﻿@model IEnumerable<Consulta>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Horário)
+                @Html.DisplayNameFor(model => model.Horario)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Dia)
@@ -35,7 +35,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Horário)
+                @Html.DisplayFor(modelItem => item.Horario)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dia)

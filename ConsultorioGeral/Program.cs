@@ -24,7 +24,7 @@ namespace ConsultorioGeral
                 {
                     var context = services.GetRequiredService<PacienteContext>();
                     PacienteDbInitializer.Initialize(context);
-                    ConsultaDbInitializer.Initialize(context);
+                    //ConsultaDbInitializer.Initialize(context);
                 }
                 catch (Exception e)
                 {
