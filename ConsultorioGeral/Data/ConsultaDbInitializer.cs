@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace ConsultorioGeral.Data
 {
-    public class PacienteDbInitializer
+    public class ConsultaDbInitializer
     {
         public static void Initialize(PacienteContext context)
         {
             context.Database.EnsureCreated();
         }
-
     }
 }

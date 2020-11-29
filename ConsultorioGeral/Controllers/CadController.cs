@@ -7,24 +7,25 @@ using ConsultorioGeral.Models;
 
 namespace ConsultorioGeral.Controllers
 {
-    public class CadastroController : Controller
+    public class CadController : Controller
     {
-        private readonly PacienteDao pacienteDao = new PacienteDao();
+        private readonly ConsultaDao consultaDao = new ConsultaDao();
 
-        public IActionResult Paciente()
+        public IActionResult Consulta()
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Paciente([Bind("Nome, Cpf, Idade, Email, Sexo, Endereco, Cep, Telefone")] Paciente paciente)
+        public async Task<IActionResult> Consulta([Bind("ConsultaId, Horário, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await pacienteDao.GravarPaciente(paciente);
+                    await consultaDao.GravarConsulta(consulta);
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -32,15 +33,12 @@ namespace ConsultorioGeral.Controllers
             {
                 ModelState.AddModelError("", "Não foi possível inserir dados. " + e.Message);
             }
-            return View(paciente);
+            return View(consulta);
         }
+
         public async Task<IActionResult> Index()
         {
-            return View(pacienteDao.ObterTodos());
+            return View(consultaDao.ObterTodas());
         }
-
-
-
-
     }
 }

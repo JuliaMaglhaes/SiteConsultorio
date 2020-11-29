@@ -15,6 +15,7 @@ namespace ConsultorioGeral.Data
         }
 
         public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Consulta> Consultas { get; set; }
     }
 }
 
