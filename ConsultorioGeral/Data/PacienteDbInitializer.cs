@@ -9,7 +9,7 @@ namespace ConsultorioGeral.Data
     {
         public static void Initialize(PacienteContext context)
         {
-            context.Database.EnsureCreated();
+            //context.Database.EnsureCreated();
         }
 
     }

@@ -113,6 +113,31 @@ namespace academico.Controllers
         {
             return _context.Pacientes.Any(a => a.PacienteId == Id);
         }
+
+        public async Task<IActionResult> Delete(long? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            var paciente = await _context.Pacientes.SingleOrDefaultAsync(a =>a.PacienteId == Id);
+            if (paciente == null)
+            {
+                NotFound();
+            }
+            return View(paciente);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> DeleteConfirmed(long? Id)
+        {
+            var paciente = await _context.Pacientes.SingleOrDefaultAsync(a => a.PacienteId == Id);
+            _context.Pacientes.Remove(paciente);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
 

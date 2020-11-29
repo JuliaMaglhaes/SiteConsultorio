@@ -113,5 +113,30 @@ namespace ConsultorioGeral.Controllers
         {
             return _context.Consultas.Any(a => a.ConsultaId == Id);
         }
+
+        public async Task<IActionResult> Delete(long? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
+            if (consulta == null)
+            {
+                NotFound();
+            }
+            return View(consulta);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> DeleteConfirmed(long? Id)
+        {
+            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
+            _context.Consultas.Remove(consulta);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
