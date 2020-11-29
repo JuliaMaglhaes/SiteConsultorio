@@ -13,5 +13,7 @@ namespace ConsultorioGeral.Models
         public string Sintomas { get; set; }
         public string Cpf { get; set; }
         public string MedicoEsp { get; set; }
+
+        public Consulta() { }
     }
 }

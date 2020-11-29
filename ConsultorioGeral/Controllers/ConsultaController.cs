@@ -23,7 +23,7 @@ namespace ConsultorioGeral.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Consultas.OrderBy(a => a.MedicoEsp).ToListAsync());
+            return View(await _context.Consultas.OrderBy(a => a.ConsultaId).ToListAsync());
         }
 
         public IActionResult Create()

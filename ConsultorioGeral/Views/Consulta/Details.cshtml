@@ -1,0 +1,74 @@
+﻿@model ConsultorioGeral.Models.Consulta
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="~/img/back.svg">
+                </a>
+                <img src="images/logo.svg">
+            </div>
+
+            <div class="header-content">
+                <strong> Cadastro de Consulta </strong>
+                <p> Preencha corretamente todos os campos </p>
+
+            </div>
+        </header>
+
+        <main>
+
+            <div>
+
+                <div>
+                    <h4>Consulta</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Horário)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Horário)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Dia)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Dia)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Sintomas)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Sintomas)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Cpf)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Cpf)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.MedicoEsp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MedicoEsp)
+                        </dd>
+                    </dl>
+                </div>
+                <footer>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.ConsultaId">Edit</a> |
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </footer>
+                </main>
+        
+    </div>
+</body>

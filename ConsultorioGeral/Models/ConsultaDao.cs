@@ -14,6 +14,8 @@ namespace ConsultorioGeral.Models
         {
             new Consulta()
             {
+                Horário = "1",
+                Dia= "1",
                 Sintomas = "Descrição dos sintomas",
                 Cpf = "123456789101",
                 MedicoEsp = "Clinico Geral",
