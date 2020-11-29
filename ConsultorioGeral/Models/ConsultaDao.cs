@@ -14,7 +14,7 @@ namespace ConsultorioGeral.Models
         {
             new Consulta()
             {
-                Horário = "1",
+                Horario = "1",
                 Dia= "1",
                 Sintomas = "Descrição dos sintomas",
                 Cpf = "123456789101",
@@ -27,7 +27,7 @@ namespace ConsultorioGeral.Models
             consultas.Add(consulta);
             return consulta;
         }
-        public IList<Consulta> ObterTodas()
+        public IList<Consulta> ObterTodos()
         {
             return consultas;
         }

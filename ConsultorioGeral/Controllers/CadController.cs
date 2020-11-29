@@ -19,7 +19,7 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Consulta([Bind("ConsultaId, Horário, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Consulta([Bind(" Horario, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace ConsultorioGeral.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(consultaDao.ObterTodas());
+            return View(consultaDao.ObterTodos());
         }
     }
 }

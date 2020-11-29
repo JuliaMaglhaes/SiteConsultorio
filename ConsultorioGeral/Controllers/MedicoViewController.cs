@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data;
 using ConsultorioGeral.Data;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +12,18 @@ using Microsoft.Data.SqlClient;
 
 namespace ConsultorioGeral.Controllers
 {
-    public class ConsultaController : Controller
+    public class MedicoViewController : Controller
     {
+
         private readonly PacienteContext _context;
 
-        public ConsultaController(PacienteContext context)
+        public MedicoViewController(PacienteContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Consultas.OrderBy(a => a.Sintomas).ToListAsync());
+            return View(await _context.Medicos.OrderBy(a => a.Nome).ToListAsync());
         }
 
         public IActionResult Create()
@@ -33,13 +33,13 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("ConsultaId, Horário, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Create([Bind("MedicoId, Nome, Crm, Especialidade ")] Medico medico)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(consulta);
+                    _context.Add(medico);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -48,7 +48,7 @@ namespace ConsultorioGeral.Controllers
             {
                 ModelState.AddModelError("", "Não foi possível inserir dados");
             }
-            return View(consulta);
+            return View(medico);
         }
 
         public async Task<IActionResult> Details(long? Id)
@@ -57,12 +57,12 @@ namespace ConsultorioGeral.Controllers
             {
                 return NotFound();
             }
-            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
-            if (consulta == null)
+            var medico = await _context.Medicos.SingleOrDefaultAsync(a => a.MedicoId == Id);
+            if (medico == null)
             {
                 return NotFound();
             }
-            return View(consulta);
+            return View(medico);
         }
 
         public async Task<IActionResult> Edit(long? Id)
@@ -71,19 +71,19 @@ namespace ConsultorioGeral.Controllers
             {
                 return NotFound();
             }
-            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
-            if (consulta == null)
+            var medico = await _context.Medicos.SingleOrDefaultAsync(a => a.MedicoId == Id);
+            if (medico == null)
             {
                 return NotFound();
             }
-            return View(consulta);
+            return View(medico);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(long? Id, [Bind("ConsultaId, Horário, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Edit(long? Id, [Bind("MedicoId, Nome, Crm, Especialidade ")] Medico medico)
         {
-            if (Id != consulta.ConsultaId)
+            if (Id != medico.MedicoId)
             {
                 return NotFound();
             }
@@ -91,12 +91,12 @@ namespace ConsultorioGeral.Controllers
             {
                 try
                 {
-                    _context.Update(consulta);
+                    _context.Update(medico);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ConsultaExists(consulta.ConsultaId))
+                    if (!MedicoExists(medico.MedicoId))
                     {
                         return NotFound();
                     }
@@ -107,11 +107,11 @@ namespace ConsultorioGeral.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(consulta);
+            return View(medico);
         }
-        public bool ConsultaExists(long? Id)
+        public bool MedicoExists(long? Id)
         {
-            return _context.Consultas.Any(a => a.ConsultaId == Id);
+            return _context.Medicos.Any(a => a.MedicoId == Id);
         }
 
         public async Task<IActionResult> Delete(long? Id)
@@ -120,20 +120,20 @@ namespace ConsultorioGeral.Controllers
             {
                 return NotFound();
             }
-            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
-            if (consulta == null)
+            var medico = await _context.Medicos.SingleOrDefaultAsync(a => a.MedicoId == Id);
+            if (medico == null)
             {
                 NotFound();
             }
-            return View(consulta);
+            return View(medico);
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
 
         public async Task<IActionResult> DeleteConfirmed(long? Id)
         {
-            var consulta = await _context.Consultas.SingleOrDefaultAsync(a => a.ConsultaId == Id);
-            _context.Consultas.Remove(consulta);
+            var medico = await _context.Medicos.SingleOrDefaultAsync(a => a.MedicoId == Id);
+            _context.Medicos.Remove(medico);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 

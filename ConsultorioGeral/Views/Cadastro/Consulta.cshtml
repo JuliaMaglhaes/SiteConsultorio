@@ -28,26 +28,34 @@
                     <legend> Seus dados </legend>
 
                     <div class="input-block">
-                        <label asp-for="Cpf" class="cpf"> CPF <small>(somente números)</small> </label>
-                        <input asp-for="Cpf" id="cpf" type="number" required>
+                        <label asp-for="Horario" class="control-label"></label>
+                        <input asp-for="Horario" type="time" class="form-control" />
+                        <span asp-validation-for="Horario" class="text-danger"></span>
                     </div>
-
-                    <div class="textarea-block">
-                        <label asp-for="Sintomas"> Sintomas </label>
-                        <textarea asp-for="Sintomas" id="sintomas"></textarea>
+                    <div class="input-block">
+                        <label asp-for="Dia" class="control-label"></label>
+                        <input asp-for="Dia" type="date" class="form-control" />
+                        <span asp-validation-for="Dia" class="text-danger"></span>
                     </div>
-
+                    <div class="input-block">
+                        <label asp-for="Sintomas" class="control-label"></label>
+                        <input asp-for="Sintomas" type="text" class="form-control" />
+                        <span asp-validation-for="Sintomas" class="text-danger"></span>
+                    </div>
+                    <div class="input-block">
+                        <label asp-for="Cpf" class="control-label"></label>
+                        <input asp-for="Cpf" class="form-control" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
                     <div class="select-block">
-                        <label asp-for="MedicoEsp"> Especialista </label>
-                        <select asp-for="MedicoEsp" id="especialista" required>
+                        <label asp-for="MedicoEsp" class="control-label"></label>
+                        <select asp-for="MedicoEsp" id="sexo" required>
                             <option value=""> Selecione uma opção </option>
-                            <option value="1">Clínico geral</option>
-                            <option value="2">Neurologista</option>
-                            <option value="3">Pediatra</option>
-                            <option value="4">Fisioterapeuta</option>
-
+                            <option value="1">Pediatra</option>
+                            <option value="2">Clínico geral</option>
+                            <option value="3">otorrinolaringologista</option>
                         </select>
-
+                        <span asp-validation-for="MedicoEsp" class="text-danger"></span>
                     </div>
 
                 </fieldset>
