@@ -38,7 +38,7 @@ namespace ConsultorioGeral.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(consultaDao.ObterTodas());
+            return View(consultaDao.ObterTodos());
         }
     }
 }

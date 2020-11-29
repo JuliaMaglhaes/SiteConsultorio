@@ -27,7 +27,7 @@ namespace ConsultorioGeral.Models
             consultas.Add(consulta);
             return consulta;
         }
-        public IList<Consulta> ObterTodas()
+        public IList<Consulta> ObterTodos()
         {
             return consultas;
         }

@@ -28,7 +28,7 @@ namespace ConsultorioGeral
             services.AddControllersWithViews();
             services.AddDbContext<PacienteContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("ConsultorioConnection")));
-            
+
         }
 
 
@@ -65,7 +65,7 @@ namespace ConsultorioGeral
 
                 endpoints.MapControllerRoute(
                 name: "medico",
-                pattern: "{controller=Home}/{action=Medico}/{id?}");
+                pattern: "{controller=Cadastro}/{action=Medico}/{id?}");
 
                 endpoints.MapControllerRoute(
                 name: "login",
