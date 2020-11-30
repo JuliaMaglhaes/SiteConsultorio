@@ -14,8 +14,8 @@ namespace ConsultorioGeral.Models
         {
             new Consulta()
             {
-                Horario = "1",
-                Dia= "1",
+                Horario = Convert.ToDateTime("31/11/2020"),
+                Dia= Convert.ToDateTime("12:00"),
                 Sintomas = "Descrição dos sintomas",
                 Cpf = "123456789101",
                 MedicoEsp = "Clinico Geral",
