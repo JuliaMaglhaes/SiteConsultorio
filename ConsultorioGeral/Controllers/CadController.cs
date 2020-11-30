@@ -40,5 +40,10 @@ namespace ConsultorioGeral.Controllers
         {
             return View(consultaDao.ObterTodos());
         }
+
+        public IActionResult IndexCad()
+        {
+            return View(consultaDao.ObterTodos());
+        }
     }
 }
