@@ -5,36 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="~/img/back.svg">
+                </a>
+                <img src="images/logo.svg">
+            </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Medico</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Crm)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Crm)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especialidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especialidade)
-        </dd>
-    </dl>
+            <div class="header-content">
+                <strong> Cadastro de Médico </strong>
+                <p> Preencha corretamente todos os campos </p>
+
+            </div>
+        </header>
+
+        <main>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Crm)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Crm)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Especialidade)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Especialidade)
+                </dd>
+            </dl>
+
+            <footer>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="MedicoId" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
+                </footer>
+            </main>
+    </div>
+    </body>
     
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="MedicoId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>

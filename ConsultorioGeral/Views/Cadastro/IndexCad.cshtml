@@ -8,10 +8,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Horario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dia)
+                @Html.DisplayNameFor(model => model.Data)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sintomas)
@@ -30,11 +27,9 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Horario)
+                    @Html.DisplayFor(modelItem => item.Data)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dia)
-                </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Sintomas)
                 </td>

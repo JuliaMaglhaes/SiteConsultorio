@@ -35,10 +35,15 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("ConsultaId, Horario, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Create([Bind("ConsultaId, Data, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
         {
             try
             {
+                consulta.Paciente = _context.Pacientes.FirstOrDefault(p => p.Cpf == (consulta.Cpf));
+
+                if (consulta.Paciente == null)
+                    ModelState.AddModelError("Cpf", "Não existe nenhum paciente cadastrado com este CPF");
+
                 if (ModelState.IsValid)
                 {
                     _context.Add(consulta);
@@ -46,10 +51,12 @@ namespace ConsultorioGeral.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch (DbUpdateException)
+            catch (DbUpdateException ex)
             {
+                var teste = ex;
                 ModelState.AddModelError("", "Não foi possível inserir dados");
             }
+
             return View(consulta);
         }
 

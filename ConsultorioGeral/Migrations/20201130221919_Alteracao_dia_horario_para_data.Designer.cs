@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsultorioGeral.Migrations
 {
     [DbContext(typeof(PacienteContext))]
-    [Migration("20201130051739_Julia1")]
-    partial class Julia1
+    [Migration("20201130221919_Alteracao_dia_horario_para_data")]
+    partial class Alteracao_dia_horario_para_data
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,19 +31,13 @@ namespace ConsultorioGeral.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Dia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Horario")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("MedicoEsp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PacienteId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("PacienteId1")
+                    b.Property<long?>("PacienteId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Sintomas")
@@ -51,7 +45,7 @@ namespace ConsultorioGeral.Migrations
 
                     b.HasKey("ConsultaId");
 
-                    b.HasIndex("PacienteId1");
+                    b.HasIndex("PacienteId");
 
                     b.ToTable("Consultas");
                 });
@@ -117,7 +111,7 @@ namespace ConsultorioGeral.Migrations
                 {
                     b.HasOne("ConsultorioGeral.Models.Paciente", "Paciente")
                         .WithMany("Consultas")
-                        .HasForeignKey("PacienteId1");
+                        .HasForeignKey("PacienteId");
 
                     b.Navigation("Paciente");
                 });

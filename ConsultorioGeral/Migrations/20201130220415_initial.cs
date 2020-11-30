@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ConsultorioGeral.Migrations
 {
-    public partial class Julia1 : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,29 +48,28 @@ namespace ConsultorioGeral.Migrations
                 {
                     ConsultaId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Horario = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Dia = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Horario = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Dia = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Sintomas = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cpf = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MedicoEsp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PacienteId = table.Column<int>(type: "int", nullable: false),
-                    PacienteId1 = table.Column<long>(type: "bigint", nullable: true)
+                    PacienteId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Consultas", x => x.ConsultaId);
                     table.ForeignKey(
-                        name: "FK_Consultas_Pacientes_PacienteId1",
-                        column: x => x.PacienteId1,
+                        name: "FK_Consultas_Pacientes_PacienteId",
+                        column: x => x.PacienteId,
                         principalTable: "Pacientes",
                         principalColumn: "PacienteId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Consultas_PacienteId1",
+                name: "IX_Consultas_PacienteId",
                 table: "Consultas",
-                column: "PacienteId1");
+                column: "PacienteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

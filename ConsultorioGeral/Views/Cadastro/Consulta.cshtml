@@ -28,14 +28,9 @@
                     <legend> Seus dados </legend>
 
                     <div class="input-block">
-                        <label asp-for="Horario" class="control-label"></label>
-                        <input asp-for="Horario" type="time" class="form-control" />
-                        <span asp-validation-for="Horario" class="text-danger"></span>
-                    </div>
-                    <div class="input-block">
-                        <label asp-for="Dia" class="control-label"></label>
-                        <input asp-for="Dia" type="date" class="form-control" />
-                        <span asp-validation-for="Dia" class="text-danger"></span>
+                        <label asp-for="Data" class="input-block"></label>
+                        <input asp-for="Data" type="datetime" class="form-control" />
+                        <span asp-validation-for="Data" class="text-danger"></span>
                     </div>
                     <div class="input-block">
                         <label asp-for="Sintomas" class="control-label"></label>
