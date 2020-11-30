@@ -16,7 +16,8 @@ namespace ConsultorioGeral.Models
         public string Endereco { get; set; }
         public string Cep { get; set; }
         public string Telefone { get; set; }
-        public virtual List<Consulta> Consultas { get; set; }
+        public List<Consulta> Consultas { get; set; }
+
 
         public Paciente()
         {

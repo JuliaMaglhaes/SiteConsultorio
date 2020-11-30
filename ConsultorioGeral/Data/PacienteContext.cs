@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using ConsultorioGeral.Models;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ConsultorioGeral.Data
 {
-    public class PacienteContext:DbContext
+    public class PacienteContext : DbContext
     {
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Consulta> Consultas { get; set; }

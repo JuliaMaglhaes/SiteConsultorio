@@ -21,10 +21,12 @@ namespace ConsultorioGeral.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+       public async Task<IActionResult> Index()
         {
-            return View(await _context.Consultas.OrderBy(a => a.Sintomas).ToListAsync());
+        return View(await _context.Consultas.OrderBy(a => a.ConsultaId).ToListAsync());
         }
+
+
 
         public IActionResult Create()
         {
