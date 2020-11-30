@@ -35,7 +35,7 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("ConsultaId, Horário, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Create([Bind("ConsultaId, Horario, Dia, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
         {
             try
             {

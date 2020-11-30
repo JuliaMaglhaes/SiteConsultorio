@@ -31,58 +31,53 @@
                             <legend> Seus dados </legend>
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="input-block">
-                                <label asp-for="Horario" class="control-label"></label>
+                                <label asp-for="Horario" class="input-block"></label>
                                 <input asp-for="Horario" type="time" class="form-control" />
                                 <span asp-validation-for="Horario" class="text-danger"></span>
                             </div>
                             <div class="input-block">
-                                <label asp-for="Dia" class="control-label"></label>
+                                <label asp-for="Dia" class="input-block"></label>
                                 <input asp-for="Dia" type="date" class="form-control" />
                                 <span asp-validation-for="Dia" class="text-danger"></span>
                             </div>
                             <div class="input-block">
-                                <label asp-for="Sintomas" class="control-label"></label>
-                                <input asp-for="Sintomas" type="text" class="form-control" />
+                                <label asp-for="Sintomas" class="input-block"></label>
+                                <input asp-for="Sintomas" class="form-control" />
                                 <span asp-validation-for="Sintomas" class="text-danger"></span>
                             </div>
                             <div class="input-block">
-                                <label asp-for="Cpf" class="control-label"></label>
+                                <label asp-for="Cpf" class="input-block"></label>
                                 <input asp-for="Cpf" class="form-control" />
                                 <span asp-validation-for="Cpf" class="text-danger"></span>
                             </div>
                             <div class="select-block">
-                                <label asp-for="MedicoEsp" class="control-label"></label>
+                                <label asp-for="MedicoEsp" class="input-block"></label>
                                 <select asp-for="MedicoEsp" id="sexo" required>
                                     <option value=""> Selecione uma opção </option>
-                                    <option value="1">Pediatra</option>
-                                    <option value="2">Clínico geral</option>
-                                    <option value="3">otorrinolaringologista</option>
+                                    <option value="1">Clínico geral</option>
+                                    <option value="2">Pediatra</option>
+                                    <option value="3">Neurologista</option>
+                                    <option value="4">Endocrinologista</option>
+                                    <option value="5">Fisioterapeuta</option>
+                                    <option value="6">Otorrinolaringologista</option>
                                 </select>
                                 <span asp-validation-for="MedicoEsp" class="text-danger"></span>
                             </div>
+                            </fieldset>
                             <div class="input-block">
                                 <input type="submit" value="Create" class="btn btn-primary" />
                             </div>
-                        </fieldset>
                     </form>
                 </div>
             </div>
-            <footer>
 
-                <p>
-                    <img src="~/img/warning.svg" alt="aviso">
-                    Importante! <br>
-                    Preencha todos os dados
-                </p>
-
-                <div>
-                    <a asp-action="Index">Back to List</a>
-                </div>
-                </footer>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
             </main>
         </div>
     </body>
 
-                @section Scripts {
-                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-                }
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

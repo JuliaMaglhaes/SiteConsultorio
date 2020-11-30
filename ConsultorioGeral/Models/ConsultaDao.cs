@@ -24,6 +24,7 @@ namespace ConsultorioGeral.Models
 
         public async Task<Consulta> GravarConsulta(Consulta consulta)
         {
+            
             consultas.Add(consulta);
             return consulta;
         }

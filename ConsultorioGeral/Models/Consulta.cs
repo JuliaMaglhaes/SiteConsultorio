@@ -16,7 +16,7 @@ namespace ConsultorioGeral.Models
         public string Cpf { get; set; }
         public string MedicoEsp { get; set; }
         public long? PacienteId { get; set; }
-        public  Paciente Paciente { get; set; }
+        //public  Paciente Paciente { get; set; }
 
         public Consulta() { }
     }
