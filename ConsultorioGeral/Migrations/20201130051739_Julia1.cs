@@ -2,7 +2,7 @@
 
 namespace ConsultorioGeral.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Julia1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
