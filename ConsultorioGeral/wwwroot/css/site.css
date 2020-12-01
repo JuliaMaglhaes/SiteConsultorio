@@ -168,7 +168,7 @@ textarea {
 #page-give-classes {
     margin-top: -32px;
     padding-top: 0;
-    margin-left: -45.5%;
+    margin-left: -42.2%;
     overflow-x: hidden;
     width: auto;
 }
@@ -185,7 +185,7 @@ textarea {
 #page-give-classes main {
     background: var(--color-box-base);
     width: 100%;
-    max-width: 74rem;
+    max-width: 79rem;
     border-radius: .8rem;
     margin: -3.2rem auto 3.2rem;
     padding-top: 6.4rem;
