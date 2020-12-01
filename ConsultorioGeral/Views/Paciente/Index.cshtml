@@ -84,9 +84,15 @@
                                     @Html.DisplayFor(modelItem => item.Idade)
                                 </td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.PacienteId">Editar</a> |
-                                    <a asp-action="Details" asp-route-id="@item.PacienteId">Detalhe</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.PacienteId">Deletar</a>
+                                    <a asp-action="Edit" asp-route-id="@item.PacienteId">
+                                        <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
+                                    </a> 
+                                    <a asp-action="Details" asp-route-id="@item.PacienteId">
+                                        <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
+                                    </a> 
+                                    <a asp-action="Delete" asp-route-id="@item.PacienteId">
+                                        <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
+                                    </a>
                                 </td>
                             </tr>
                         }
