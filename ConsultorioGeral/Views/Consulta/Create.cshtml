@@ -23,7 +23,7 @@
         </header>
 
         <main>
-            <hr />
+    
             <div class="row">
                 <div class="col-md-4">
                     <form asp-action="Create">
@@ -61,16 +61,15 @@
                             </fieldset>
                         <footer>
                             <div class="input-block">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <input type="submit" value="Marcar Consulta" class="btn btn-primary" />
+                                <a asp-action="Index">Visualizar consultas agendadas</a>
                             </div>
                         </footer>
                     </form>
                 </div>
             </div>
 
-            <div>
-                <a asp-action="Index">Back to List</a>
-            </div>
+           
             </main>
         </div>
     </body>

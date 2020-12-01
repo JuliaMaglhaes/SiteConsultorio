@@ -276,7 +276,7 @@ textarea {
 }
 
 #page-give-classes main footer input {
-    width: 30%;
+    width: 180px;
     height: 5.6rem;
     background: var(--color-secondary);
     color: var(--color-button-text);
