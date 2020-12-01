@@ -42,10 +42,13 @@
                         <div class="select-block">
                             <label asp-for="Especialidade" class="select-block"></label>
                             <select asp-for="Especialidade" id="especialidade" required>
-                                <option value=""> Selecione uma opção </option>
-                                <option value="1">Clinico geral</option>
-                                <option value="2">Pediatra</option>
-                                <option value="3">Otorinolaringologista</option>
+                                <option value="">Escolha uma opção</option>
+                                <option value="Clínico geral">Clínico geral</option>
+                                <option value="Pediatra">Pediatra</option>
+                                <option value="Neurologista">Neurologista</option>
+                                <option value="Endocrinologista">Endocrinologista</option>
+                                <option value="Fisioterapeuta">Fisioterapeuta</option>
+                                <option value="Otorrinolaringologista">Otorrinolaringologista</option>
 
                             </select>
                             <span asp-validation-for="Especialidade" class="text-danger"></span>

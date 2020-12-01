@@ -79,19 +79,19 @@
                                 <input asp-for="Telefone" class="form-control" />
                                 <span asp-validation-for="Telefone" class="text-danger"></span>
                             </div>
-                            </fieldset>
-                            
+                        </fieldset>
+                        <footer>
+                            <div class="input-block">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                            <div>
+                                <a asp-action="Index">Exibir lista</a>
+                            </div>
+                        </footer>
                     </form>
                 </div>
             </div>
-            <footer>
-                <div class="input-block">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-                <div>
-                    <a asp-action="Index">Exibir lista</a>
-                </div>
-            </footer>
+
             </main>
         </div>
     </body>

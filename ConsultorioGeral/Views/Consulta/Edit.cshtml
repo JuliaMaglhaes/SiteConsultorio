@@ -47,10 +47,13 @@
                         <div class="select-block">
                             <label asp-for="MedicoEsp" class="control-label"></label>
                             <select asp-for="MedicoEsp" id="sexo" required>
-                                <option value=""> Selecione uma opção </option>
-                                <option value="1">Pediatra</option>
-                                <option value="2">Clínico geral</option>
-                                <option value="3">otorrinolaringologista</option>
+                                <option value="">Escolha uma opção</option>
+                                <option value="Clínico geral">Clínico geral</option>
+                                <option value="Pediatra">Pediatra</option>
+                                <option value="Neurologista">Neurologista</option>
+                                <option value="Endocrinologista">Endocrinologista</option>
+                                <option value="Fisioterapeuta">Fisioterapeuta</option>
+                                <option value="Otorrinolaringologista">Otorrinolaringologista</option>
                             </select>
                             <span asp-validation-for="MedicoEsp" class="text-danger"></span>
                         </div>

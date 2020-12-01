@@ -5,11 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data;
 using ConsultorioGeral.Data;
+
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using ConsultorioGeral.Models;
 using Microsoft.Data.Sql;
 using Microsoft.Data.SqlClient;
+using System.IO;
+using PdfSharp.Drawing;
+using System.Diagnostics;
 
 namespace ConsultorioGeral.Controllers
 {
@@ -21,9 +25,9 @@ namespace ConsultorioGeral.Controllers
         {
             _context = context;
         }
-       public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-        return View(await _context.Consultas.OrderBy(a => a.ConsultaId).ToListAsync());
+            return View(await _context.Consultas.OrderBy(a => a.ConsultaId).ToListAsync());
         }
 
 
@@ -147,5 +151,6 @@ namespace ConsultorioGeral.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+
+        }
     }
-}
