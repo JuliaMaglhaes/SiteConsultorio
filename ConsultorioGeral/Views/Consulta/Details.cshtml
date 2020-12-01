@@ -57,7 +57,9 @@
                 </div>
                 <footer>
                     <div>
-                        <a asp-action="Edit" asp-route-id="@Model.ConsultaId">Editar</a> |
+                        <a asp-action="Edit" asp-route-id="@Model.ConsultaId">
+                            <img src="~/img/editButton.svg" width ="42" height="42" alt="Editar" />
+                        </a> |
                         <a asp-action="Index">Exibir lista</a>
                     </div>
                 </footer>
