@@ -1,9 +1,11 @@
 ﻿/* Inicio style.css*/
 :root {
+    --color-landing: #00995D;
+    --color-btn-central: #f2f2f2;
     --color-background: #F0F0F7;
-    --color-primary-lighter: #428c48;
+    --color-primary-lighter: #04D361;
     --color-primary-light: #2a8c48;
-    --color-primary: #619460;
+    --color-primary: #06C077;
     --color-primary-dark: #774DD6;
     --color-primary-darker: #6842c2;
     --color-secondary: #04D361;
@@ -330,7 +332,7 @@ textarea {
 /* Inicio page landing */
 
 #page-landing {
-    background: var(--color-primary);
+    background: var(--color-landing);
     margin-top: 50px;
 }
 
@@ -389,7 +391,7 @@ textarea {
         }
 
         .buttons-container a.give-classes {
-            background: var(--color-secondary);
+            background: var(--color-btn-central);
             margin-right: 0;
         }
 

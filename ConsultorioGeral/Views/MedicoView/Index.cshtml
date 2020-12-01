@@ -38,7 +38,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Especialidade)
                                 </th>
-                                <th></th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,9 +55,15 @@
                                         @Html.DisplayFor(modelItem => item.Especialidade)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.MedicoId">Editar</a> |
-                                        <a asp-action="Details" asp-route-id="@item.MedicoId">Detalhe</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.MedicoId">Deletar</a>
+                                        <a asp-action="Edit" asp-route-id="@item.MedicoId">
+                                            <img src ="~/img/editButton.svg" width="36" height="36" alt="Editar"/>
+                                            </a> 
+                                        <a asp-action="Details" asp-route-id="@item.MedicoId">
+                                            <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes"/>
+                                        </a> 
+                                        <a asp-action="Delete" asp-route-id="@item.MedicoId">
+                                            <img src ="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
+                                        </a>
                                     </td>
                                 </tr>
                             }
