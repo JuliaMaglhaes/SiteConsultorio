@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Paciente>
 
 @{
-    ViewData["Title"] = "Pacientes cadastrados";
+    ViewData["Title"] = "Consultorio | Pacientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -17,7 +17,7 @@
 
             <div class="header-content">
                 <strong> Pacientes cadastrados </strong>
-                <p> Lista de clientes cadastrados na clínica </p>
+                <p> Abaixo estão todos os pacientes cadastrados em nossa plataforma </p>
 
             </div>
         </header>
@@ -25,7 +25,7 @@
         <main>
 
             <div class="card-body">
-                <table  manifest="tabela_pacientes">
+                <table class = "pure-table" manifest="tabela_pacientes">
                     <thread>
                         <tr>
                             <th>
@@ -97,14 +97,13 @@
 
                 <p>
                     <img src="~/img/warning.svg" alt="aviso">
-                    Importante! <br>
+                    Acesse! <br>
                     Lista de pacientes atualizada
                 </p>
                 <div class="card-footer bg-sucess text-center">
-                    <a asp-action="Create" class="btn-success">Criar um novo paciente</a>
+                    <a asp-action="Create" class="btn-success">Cadastrar novo paciente</a>
                 </div>
-                </footer>
+            </footer>
         </main>
-        </div>
-    </body>
-
+    </div>
+</body>

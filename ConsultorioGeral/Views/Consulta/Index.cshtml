@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ConsultorioGeral.Models.Consulta>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Consultorio | Consultas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,16 +16,16 @@
             </div>
 
             <div class="header-content">
-                <strong> Pacientes cadastrados </strong>
-                <p> Lista de clientes cadastrados na clínica </p>
+                <strong> Consultas </strong>
+                <p> Abaixo estão todas as consultas cadastradas em nossa plataforma </p>
 
             </div>
         </header>
 
         <main>
-            <a asp-action="Create">Create New</a>
+            <a asp-action="Create">Cadastrar nova consulta</a>
             
-            <table class="table">
+            <table class = "pure-table">
                 <thead>
                     <tr>
                         <th>

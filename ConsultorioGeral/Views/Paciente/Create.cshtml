@@ -1,7 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Paciente
 
 @{
-    ViewData["Title"] = "Cadastro Paciente";
+    ViewData["Title"] = "Cadastro | Paciente";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -18,7 +18,7 @@
 
             <div class="header-content">
                 <strong> Cadastro de Paciente </strong>
-                <p> Preencha corretamente todos os campos </p>
+                <p> Preencha corretamente todos os campos corretamente para evitar problemas </p>
 
             </div>
         </header>
@@ -78,7 +78,7 @@
                                 <span asp-validation-for="Telefone" class="text-danger"></span>
                             </div>
                             <div class="input-block">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <input type="submit" value="Finalizar Cadastro" class="btn btn-primary" />
                             </div>
                         </fieldset>
                     </form>
@@ -93,7 +93,7 @@
                     Preencha todos os dados
                 </p>
                 <div>
-                    <a asp-action="Index">Listar</a>
+                    <a asp-action="Index">Retornar a pacientes cadastrados</a>
                 </div>
             </footer>
         </main>
