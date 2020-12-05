@@ -405,7 +405,7 @@ textarea {
             }
 
             .buttons-container a.give-classes {
-                background: var(--color-btn-central);
+                background: var(--color-primary-light);
                 margin-right: 0;
             }
 

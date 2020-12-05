@@ -1,5 +1,5 @@
 ﻿@model ConsultorioGeral.Models.Consulta
-@using ConsultorioGeral.Enums
+
 
 @{ ViewData["Title"] = "Detalhes | Consulta";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,35 +24,38 @@
 
         <main>
 
+            <fieldset>
+                <legend> Dados coletados </legend>
 
-            <div>
-                <h4>Consulta</h4>
-                <hr />
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Data)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Data)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Sintomas)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Sintomas)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Cpf)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Cpf)
-                    </dd>
+                <div>
 
-                </dl>
-            </div>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Data)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Data)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Sintomas)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Sintomas)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Cpf)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Cpf)
+                        </dd>
+                    </dl>
+                </div>
+            </fieldset>
+
+     
+
 
             <!---->
-
             <!---->
             <footer>
                 <div>

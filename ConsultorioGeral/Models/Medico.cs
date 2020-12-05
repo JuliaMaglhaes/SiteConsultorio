@@ -14,6 +14,7 @@ namespace ConsultorioGeral.Models
         public string Nome { get; set; }
         public string Crm { get; set; }
         public Especialidade Especialidade { get; set; }
+        public List<Consulta> Consultas { get; set; }
         public Medico() { }
     }
 }
