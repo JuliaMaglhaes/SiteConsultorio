@@ -4,14 +4,16 @@ using ConsultorioGeral.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsultorioGeral.Migrations
 {
     [DbContext(typeof(PacienteContext))]
-    partial class PacienteContextModelSnapshot : ModelSnapshot
+    [Migration("20201202235029_alteracao_diagnotco")]
+    partial class alteracao_diagnotco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,9 +37,6 @@ namespace ConsultorioGeral.Migrations
                     b.Property<string>("MedicoEsp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("MedicoId")
-                        .HasColumnType("bigint");
-
                     b.Property<long?>("PacienteId")
                         .HasColumnType("bigint");
 
@@ -46,11 +45,26 @@ namespace ConsultorioGeral.Migrations
 
                     b.HasKey("ConsultaId");
 
-                    b.HasIndex("MedicoId");
-
                     b.HasIndex("PacienteId");
 
                     b.ToTable("Consultas");
+                });
+
+            modelBuilder.Entity("ConsultorioGeral.Models.Diagnostico", b =>
+                {
+                    b.Property<long?>("DiagnosticoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<long?>("ConsultaId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("DiagnosticoId");
+
+                    b.HasIndex("ConsultaId");
+
+                    b.ToTable("Diagnosticos");
                 });
 
             modelBuilder.Entity("ConsultorioGeral.Models.Medico", b =>
@@ -63,18 +77,13 @@ namespace ConsultorioGeral.Migrations
                     b.Property<string>("Crm")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Especialidade")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("MedicoId1")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Especialidade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MedicoId");
-
-                    b.HasIndex("MedicoId1");
 
                     b.ToTable("Medicos");
                 });
@@ -117,29 +126,25 @@ namespace ConsultorioGeral.Migrations
 
             modelBuilder.Entity("ConsultorioGeral.Models.Consulta", b =>
                 {
-                    b.HasOne("ConsultorioGeral.Models.Medico", "Medico")
-                        .WithMany()
-                        .HasForeignKey("MedicoId");
-
                     b.HasOne("ConsultorioGeral.Models.Paciente", "Paciente")
                         .WithMany("Consultas")
                         .HasForeignKey("PacienteId");
 
-                    b.Navigation("Medico");
-
                     b.Navigation("Paciente");
                 });
 
-            modelBuilder.Entity("ConsultorioGeral.Models.Medico", b =>
+            modelBuilder.Entity("ConsultorioGeral.Models.Diagnostico", b =>
                 {
-                    b.HasOne("ConsultorioGeral.Models.Medico", null)
-                        .WithMany("Medicos")
-                        .HasForeignKey("MedicoId1");
+                    b.HasOne("ConsultorioGeral.Models.Consulta", "Consulta")
+                        .WithMany("Diagnosticos")
+                        .HasForeignKey("ConsultaId");
+
+                    b.Navigation("Consulta");
                 });
 
-            modelBuilder.Entity("ConsultorioGeral.Models.Medico", b =>
+            modelBuilder.Entity("ConsultorioGeral.Models.Consulta", b =>
                 {
-                    b.Navigation("Medicos");
+                    b.Navigation("Diagnosticos");
                 });
 
             modelBuilder.Entity("ConsultorioGeral.Models.Paciente", b =>

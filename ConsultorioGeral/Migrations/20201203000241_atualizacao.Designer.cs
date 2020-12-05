@@ -4,14 +4,16 @@ using ConsultorioGeral.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsultorioGeral.Migrations
 {
     [DbContext(typeof(PacienteContext))]
-    partial class PacienteContextModelSnapshot : ModelSnapshot
+    [Migration("20201203000241_atualizacao")]
+    partial class atualizacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,9 +37,6 @@ namespace ConsultorioGeral.Migrations
                     b.Property<string>("MedicoEsp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("MedicoId")
-                        .HasColumnType("bigint");
-
                     b.Property<long?>("PacienteId")
                         .HasColumnType("bigint");
 
@@ -45,8 +44,6 @@ namespace ConsultorioGeral.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ConsultaId");
-
-                    b.HasIndex("MedicoId");
 
                     b.HasIndex("PacienteId");
 
@@ -63,18 +60,13 @@ namespace ConsultorioGeral.Migrations
                     b.Property<string>("Crm")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Especialidade")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("MedicoId1")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Especialidade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MedicoId");
-
-                    b.HasIndex("MedicoId1");
 
                     b.ToTable("Medicos");
                 });
@@ -117,29 +109,11 @@ namespace ConsultorioGeral.Migrations
 
             modelBuilder.Entity("ConsultorioGeral.Models.Consulta", b =>
                 {
-                    b.HasOne("ConsultorioGeral.Models.Medico", "Medico")
-                        .WithMany()
-                        .HasForeignKey("MedicoId");
-
                     b.HasOne("ConsultorioGeral.Models.Paciente", "Paciente")
                         .WithMany("Consultas")
                         .HasForeignKey("PacienteId");
 
-                    b.Navigation("Medico");
-
                     b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("ConsultorioGeral.Models.Medico", b =>
-                {
-                    b.HasOne("ConsultorioGeral.Models.Medico", null)
-                        .WithMany("Medicos")
-                        .HasForeignKey("MedicoId1");
-                });
-
-            modelBuilder.Entity("ConsultorioGeral.Models.Medico", b =>
-                {
-                    b.Navigation("Medicos");
                 });
 
             modelBuilder.Entity("ConsultorioGeral.Models.Paciente", b =>

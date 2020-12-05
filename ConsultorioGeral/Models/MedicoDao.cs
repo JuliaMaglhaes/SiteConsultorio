@@ -1,3 +1,4 @@
+using ConsultorioGeral.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace ConsultorioGeral.Models
             {
                 Nome = "Doutor",
                 Crm = "0123456",
-                Especialidade = "Clinico Geral"
+                Especialidade = Especialidade.ClinicoGeral
             }
         };
 

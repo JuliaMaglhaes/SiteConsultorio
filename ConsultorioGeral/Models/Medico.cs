@@ -1,8 +1,6 @@
-﻿using System;
+﻿using ConsultorioGeral.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConsultorioGeral.Models
 {
@@ -12,7 +10,7 @@ namespace ConsultorioGeral.Models
         public long? MedicoId { get; set; }
         public string Nome { get; set; }
         public string Crm { get; set; }
-        public string Especialidade { get; set; }
+        public Especialidade Especialidade { get; set; }
         public Medico() { }
     }
 }

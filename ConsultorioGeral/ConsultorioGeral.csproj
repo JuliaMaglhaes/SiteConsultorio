@@ -21,4 +21,8 @@
     <PackageReference Include="PdfSharpCore" Version="1.2.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Especialidade\" />
+  </ItemGroup>
+
 </Project>
