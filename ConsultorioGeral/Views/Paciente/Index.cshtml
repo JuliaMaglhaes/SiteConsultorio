@@ -23,81 +23,66 @@
         </header>
 
         <main>
-
+            
             <div class="card-body">
-                <table class = "pure-table" manifest="tabela_pacientes">
-                    <thread>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Nome)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Email)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Endereco)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Cep)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Cpf)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Sexo)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Telefone)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Idade)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thread>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+                <center>
+                    <table class="pure-table" manifest="tabela_pacientes">
+                        <thread>
                             <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Nome)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Email)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Endereco)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Cep)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Cpf)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Sexo)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Telefone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Idade)
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.PacienteId">
-                                        <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
-                                    </a> 
-                                    <a asp-action="Details" asp-route-id="@item.PacienteId">
-                                        <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
-                                    </a> 
-                                    <a asp-action="Delete" asp-route-id="@item.PacienteId">
-                                        <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
-                                    </a>
-                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cpf)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Sexo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telefone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th></th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thread>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cpf)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sexo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.PacienteId">
+                                            <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.PacienteId">
+                                            <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.PacienteId">
+                                            <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </center>
             </div>
             <footer>
 
@@ -110,6 +95,7 @@
                     <a asp-action="Create" class="btn-success">Cadastrar novo paciente</a>
                 </div>
             </footer>
+
         </main>
     </div>
 </body>
