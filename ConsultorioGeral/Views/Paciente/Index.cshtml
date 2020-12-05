@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<Paciente>
 
+
+
 @{
     ViewData["Title"] = "Consultorio | Pacientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,7 +25,8 @@
         </header>
 
         <main>
-            
+         
+
             <div class="card-body">
                 <center>
                     <table class="pure-table" manifest="tabela_pacientes">
@@ -41,7 +44,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Telefone)
                                 </th>
-                                
+
                                 <th></th>
                             </tr>
                         </thread>
@@ -62,7 +65,7 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Telefone)
                                     </td>
-                                    
+
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.PacienteId">
                                             <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
