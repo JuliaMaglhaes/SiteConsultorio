@@ -57,7 +57,15 @@ namespace academico.Controllers
             {
                 return NotFound();
             }
-            var paciente = await _context.Pacientes.SingleOrDefaultAsync(a => a.PacienteId == Id);
+            var paciente = await _context.Pacientes
+                .Include(x => x.Consultas)
+                .SingleOrDefaultAsync(a => a.PacienteId == Id);
+
+            ViewBag.Consultas = _context.Consultas
+                .Include(x => x.Medico)
+                .Include(x => x.Paciente)
+                .Where(a => a.PacienteId == Id).ToList();
+
             if (paciente == null)
             {
                 return NotFound();
@@ -120,7 +128,7 @@ namespace academico.Controllers
             {
                 return NotFound();
             }
-            var paciente = await _context.Pacientes.SingleOrDefaultAsync(a =>a.PacienteId == Id);
+            var paciente = await _context.Pacientes.SingleOrDefaultAsync(a => a.PacienteId == Id);
             if (paciente == null)
             {
                 NotFound();

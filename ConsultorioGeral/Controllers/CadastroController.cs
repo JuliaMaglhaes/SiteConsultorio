@@ -39,7 +39,7 @@ namespace ConsultorioGeral.Controllers
             return View(pacienteDao.ObterTodos());
         }
 
-       // public IActionResult IndexCad()
+        // public IActionResult IndexCad()
         //{
         //    return View(pacienteDao.ObterTodos());
         //}

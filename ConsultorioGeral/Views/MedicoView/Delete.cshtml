@@ -1,9 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Medico
 
-@{
-    ViewData["Title"] = "Deletar | Médico";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Deletar | Médico";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -46,13 +44,13 @@
             </dl>
 
             <footer>
-            <form asp-action="Delete">
-                <input type="hidden" asp-for="MedicoId" />
-                <input type="submit" value="Delete" class="btn btn-danger" /> |
-                <a asp-action="Index">Exibir lista</a>
-            </form>
-                </footer>
-            </main>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="MedicoId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index">Exibir lista</a>
+                </form>
+            </footer>
+        </main>
     </div>
-    </body>
-    
+</body>
+

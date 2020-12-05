@@ -1,9 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Medico
 
-@{
-    ViewData["Title"] = "Detalhes | Médico";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Detalhes | Médico";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -45,18 +43,19 @@
                 </dd>
             </dl>
             <footer>
-            <div>
-                <a asp-action="Edit" asp-route-id="@Model.MedicoId">
-                    <img src="~/img/editButton.svg" width ="42" height = "42" alt="Editar" />
-                </a> 
-                <a asp-action="Index">
-                Exibir lista</a>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.MedicoId">
+                        <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
+                    </a>
+                    <a asp-action="Index">
+                        Exibir lista
+                    </a>
 
-            </div>
-                </footer>
+                </div>
+            </footer>
         </main>
     </div>
-    
+
 
 
 </body>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data;
 using ConsultorioGeral.Data;
+
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using ConsultorioGeral.Models;
@@ -13,6 +14,7 @@ using Microsoft.Data.SqlClient;
 using System.IO;
 using PdfSharp.Drawing;
 using System.Diagnostics;
+using ConsultorioGeral.Enums;
 
 namespace ConsultorioGeral.Controllers
 {
@@ -29,7 +31,13 @@ namespace ConsultorioGeral.Controllers
             return View(await _context.Consultas.OrderBy(a => a.ConsultaId).ToListAsync());
         }
 
+        [HttpPost]
+        public JsonResult ObterMedicosPorEspecialidade(Especialidade especialidade)
+        {
+            var medicosDisponiveis = _context.Medicos.Where(x => x.Especialidade == especialidade).ToList();
 
+            return Json(new { data = medicosDisponiveis });
+        }
 
         public IActionResult Create()
         {
@@ -38,7 +46,7 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("ConsultaId, Data, Sintomas, Cpf, MedicoEsp")] Consulta consulta)
+        public async Task<IActionResult> Create([Bind("ConsultaId, Data, Sintomas, Cpf, MedicoId")] Consulta consulta)
         {
             try
             {
@@ -151,5 +159,5 @@ namespace ConsultorioGeral.Controllers
 
         }
 
-        }
     }
+}

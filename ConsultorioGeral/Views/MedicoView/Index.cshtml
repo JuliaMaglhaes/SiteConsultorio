@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<ConsultorioGeral.Models.Medico>
 
-@{
-    ViewData["Title"] = "Consultorio | Médicos";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Consultorio | Médicos";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -44,34 +42,33 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Nome)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Crm)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Especialidade)
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.MedicoId">
-                                            <img src ="~/img/editButton.svg" width="36" height="36" alt="Editar"/>
-                                            </a> 
-                                        <a asp-action="Details" asp-route-id="@item.MedicoId">
-                                            <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes"/>
-                                        </a> 
-                                        <a asp-action="Delete" asp-route-id="@item.MedicoId">
-                                            <img src ="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Crm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especialidade)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MedicoId">
+                            <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.MedicoId">
+                            <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.MedicoId">
+                            <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
+                        </a>
+                    </td>
+                </tr>}
                         </tbody>
                     </table>
                 </center>
             </div>
-            
-</main>
-</div>
+
+        </main>
+    </div>
 </body>

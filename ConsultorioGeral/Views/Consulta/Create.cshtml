@@ -1,9 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Consulta
+@using ConsultorioGeral.Enums
 
-@{
-    ViewData["Title"] = "Marcar | Consulta ";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Marcar | Consulta ";}
 
 <body id="page-give-classes">
     <div id="container">
@@ -23,7 +21,7 @@
         </header>
 
         <main>
-    
+
             <div class="row">
                 <div class="col-md-4">
                     <form asp-action="Create">
@@ -37,7 +35,7 @@
                             </div>
                             <div class="input-block">
                                 <label asp-for="Sintomas" class="input-block"></label>
-                                <input asp-for="Sintomas" class="form-control" />
+                                <textarea asp-for="Sintomas" class="form-control"> </textarea>
                                 <span asp-validation-for="Sintomas" class="text-danger"></span>
                             </div>
                             <div class="input-block">
@@ -46,19 +44,20 @@
                                 <span asp-validation-for="Cpf" class="text-danger"></span>
                             </div>
                             <div class="select-block">
-                                <label asp-for="MedicoEsp" class="input-block"></label>
-                                <select asp-for="MedicoEsp" id="sexo" required>
-                                    <option value=""> Selecione uma opção </option>
-                                    <option value="Clínico geral">Clínico geral</option>
-                                    <option value="Pediatra">Pediatra</option>
-                                    <option value="Neurologista">Neurologista</option>
-                                    <option value="Endocrinologista">Endocrinologista</option>
-                                    <option value="Fisioterapeuta">Fisioterapeuta</option>
-                                    <option value="Otorrinolaringologista">Otorrinolaringologista</option>
+                                <label class="input-block">Especialidade</label>
+                                <select id="select-especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                    <option selected="selected" value="">Selecione a Especialidade</option>
                                 </select>
-                                <span asp-validation-for="MedicoEsp" class="text-danger"></span>
                             </div>
-                            </fieldset>
+
+                            <div class="select-block">
+                                <label class="input-block">Médico</label>
+                                <select asp-for="MedicoId" id="select-medicos">
+                                    <option value="">Selecione o Médico</option>
+                                </select>
+                            </div>
+
+                        </fieldset>
                         <footer>
                             <div class="input-block">
                                 <input type="submit" value="Marcar Consulta" class="btn btn-primary" />
@@ -69,11 +68,12 @@
                 </div>
             </div>
 
-           
-            </main>
-        </div>
-    </body>
 
-            @section Scripts {
-                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            }
+        </main>
+    </div>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

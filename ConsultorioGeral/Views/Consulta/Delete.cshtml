@@ -1,9 +1,8 @@
 ﻿@model ConsultorioGeral.Models.Consulta
+@using ConsultorioGeral.Enums
 
-@{
-    ViewData["Title"] = "Deletar | Consulta";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Deletar | Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -43,12 +42,7 @@
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.Cpf)
                 </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.MedicoEsp)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.MedicoEsp)
-                </dd>
+
             </dl>
 
             <footer>
@@ -58,6 +52,6 @@
                     <a asp-action="Index">Exibir lista</a>
                 </form>
             </footer>
-            </main>
+        </main>
     </div>
 </body>

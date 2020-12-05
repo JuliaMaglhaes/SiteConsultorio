@@ -23,7 +23,7 @@ namespace ConsultorioGeral.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Medico ([Bind("Nome, Crm, Especialidade")] Medico medico)
+        public async Task<IActionResult> Medico([Bind("Nome, Crm, Especialidade")] Medico medico)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace ConsultorioGeral.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 ModelState.AddModelError("", "Não foi possível inserir dados." + e.Message);
             }

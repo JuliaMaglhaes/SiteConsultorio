@@ -1,9 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Consulta
 
-@{
-    ViewData["Title"] = "Detalhes | Consulta";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Detalhes | Consulta";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -25,45 +23,39 @@
         <main>
 
 
+            <div>
+                <h4>Consulta</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Data)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Data)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Sintomas)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Sintomas)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Cpf)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Cpf)
+                    </dd>
+                </dl>
+            </div>
+            <footer>
                 <div>
-                    <h4>Consulta</h4>
-                    <hr />
-                    <dl class="row">
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Data)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Data)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Sintomas)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Sintomas)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Cpf)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Cpf)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.MedicoEsp)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.MedicoEsp)
-                        </dd>
-                    </dl>
+                    <a asp-action="Edit" asp-route-id="@Model.ConsultaId">
+                        <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
+                    </a> |
+                    <a asp-action="Index">Exibir lista</a>
                 </div>
-                <footer>
-                    <div>
-                        <a asp-action="Edit" asp-route-id="@Model.ConsultaId">
-                            <img src="~/img/editButton.svg" width ="42" height="42" alt="Editar" />
-                        </a> |
-                        <a asp-action="Index">Exibir lista</a>
-                    </div>
-                </footer>
-                </main>
-        
+            </footer>
+        </main>
+
     </div>
 </body>

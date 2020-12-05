@@ -1,4 +1,25 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$("#select-especialidade").change(function () {
+    let especialidade = $(this).val();
+    $.ajax({
+        url: '/Consulta/ObterMedicosPorEspecialidade',
+        data: { especialidade },
+        type: 'POST',
+        success: function (result) {
 
-// Write your JavaScript code.
+            let selectBox = $("#select-medicos");
+            selectBox.empty();
+
+            selectBox.append($('<option>', {
+                value: "",
+                text: "Selecione o Médico",
+            }));
+
+            $.each(result.data, function (i, item) {
+                selectBox.append($('<option>', {
+                    value: item.medicoId,
+                    text: item.nome,
+                }));
+            });
+        }
+    });
+});

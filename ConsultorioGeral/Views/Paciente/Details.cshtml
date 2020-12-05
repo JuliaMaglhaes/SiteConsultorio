@@ -1,9 +1,9 @@
 ﻿@model ConsultorioGeral.Models.Paciente
-
-@{
-    ViewData["Title"] = "Detalhes | Paciente";
+@using ConsultorioGeral.Models
+@{ ViewData["Title"] = "Detalhes | Paciente";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
+    List<Consulta> consultas = ViewBag.Consultas; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -78,6 +78,15 @@
                     </dd>
                 </dl>
             </div>
+            <div>
+                @foreach (var consulta in consultas)
+                {
+    <div>
+        <p>@consulta.Medico.Nome</p>
+        <p>@consulta.Sintomas</p>
+        <p>@consulta.Data</p>
+    </div>}
+            </div>
             <footer>
                 <div>
                     <a asp-action="Edit" asp-route-id="@Model.PacienteId">
@@ -87,6 +96,6 @@
                 </div>
             </footer>
         </main>
-        </div>
-    </body>
+    </div>
+</body>
 

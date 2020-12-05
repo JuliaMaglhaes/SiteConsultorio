@@ -1,9 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Paciente
 
-@{
-    ViewData["Title"] = "Cadastro | Paciente";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Cadastro | Paciente";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <body id="page-give-classes">
@@ -24,7 +22,7 @@
         </header>
 
         <main>
-           
+
             <div class="row">
                 <div class="col-md-4">
                     <form asp-action="Create">
@@ -96,9 +94,9 @@
                 </div>
             </footer>
         </main>
-        </div>
-        </body>
+    </div>
+</body>
 
-            @section Scripts {
-                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

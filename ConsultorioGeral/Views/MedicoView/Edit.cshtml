@@ -1,9 +1,8 @@
 ﻿@model ConsultorioGeral.Models.Medico
+@using ConsultorioGeral.Enums
 
-@{
-    ViewData["Title"] = "Editar | Médico";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Editar | Médico";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -41,14 +40,10 @@
                         </div>
                         <div class="select-block">
                             <label asp-for="Especialidade" class="select-block"></label>
-                            <select asp-for="Especialidade" id="especialidade" required>
-                                <option value="">Escolha uma opção</option>
-                                <option value="Clínico geral">Clínico geral</option>
-                                <option value="Pediatra">Pediatra</option>
-                                <option value="Neurologista">Neurologista</option>
-                                <option value="Endocrinologista">Endocrinologista</option>
-                                <option value="Fisioterapeuta">Fisioterapeuta</option>
-                                <option value="Otorrinolaringologista">Otorrinolaringologista</option>
+
+                            <label asp-for="Especialidade" class="control-label"></label>
+                            <select asp-for="Especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                <option selected="selected" value="">Selecione a Especialidade</option>
 
                             </select>
                             <span asp-validation-for="Especialidade" class="text-danger"></span>
@@ -64,10 +59,10 @@
                     <a asp-action="Index">Exibir lista</a>
                 </div>
             </footer>
-            </main>
-        </div>
-    </body>
+        </main>
+    </div>
+</body>
 
-            @section Scripts {
-                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

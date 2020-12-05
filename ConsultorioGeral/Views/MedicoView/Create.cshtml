@@ -1,10 +1,7 @@
 ﻿@model ConsultorioGeral.Models.Medico
-
-@{
-    ViewData["Title"] = "Cadastro | Médico";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
+@using ConsultorioGeral.Enums
+@{ ViewData["Title"] = "Cadastro | Médico";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <body id="page-give-classes">
@@ -25,7 +22,7 @@
         </header>
 
         <main>
-          
+
             <div class="row">
                 <div class="col-md-4">
                     <form method="post" asp-action="Create">
@@ -44,21 +41,16 @@
                             </div>
                             <div class="select-block">
                                 <label asp-for="Especialidade" class="control-label"></label>
-                                <select asp-for="Especialidade" id="especialidade" required>
-                                    <option value="">Escolha uma opção</option>
-                                    <option value="Clínico geral">Clínico geral</option>
-                                    <option value="Pediatra">Pediatra</option>
-                                    <option value="Neurologista">Neurologista</option>
-                                    <option value="Endocrinologista">Endocrinologista</option>
-                                    <option value="Fisioterapeuta">Fisioterapeuta</option>
-                                    <option value="Otorrinolaringologista">Otorrinolaringologista</option>
+                                <select asp-for="Especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                    <option selected="selected" value="">Selecione a Especialidade</option>
                                 </select>
+
                                 <span asp-validation-for="Especialidade" class="text-danger"></span>
                             </div>
                             <div class="input-block">
                                 <input type="submit" value="Cadastrar Médico" class="btn btn-primary" />
                             </div>
-                            </fieldset>
+                        </fieldset>
                     </form>
                 </div>
             </div>
@@ -70,16 +62,16 @@
                     Importante! <br>
                     Preencha todos os dados
                 </p>
-                
 
-                    <div>
-                        <a asp-action="Index">Exibir lista</a>
-                    </div>
-                </footer>
+
+                <div>
+                    <a asp-action="Index">Exibir lista</a>
+                </div>
+            </footer>
         </main>
-        </div>
-    </body>
+    </div>
+</body>
 
-            @section Scripts {
-                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

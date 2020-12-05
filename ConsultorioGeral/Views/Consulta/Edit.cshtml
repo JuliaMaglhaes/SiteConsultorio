@@ -1,9 +1,8 @@
 ﻿@model ConsultorioGeral.Models.Consulta
+@using ConsultorioGeral.Enums
 
-@{
-    ViewData["Title"] = "Editar | Consulta";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Editar | Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -45,17 +44,17 @@
                             <span asp-validation-for="Cpf" class="text-danger"></span>
                         </div>
                         <div class="select-block">
-                            <label asp-for="MedicoEsp" class="control-label"></label>
-                            <select asp-for="MedicoEsp" id="sexo" required>
-                                <option value="">Escolha uma opção</option>
-                                <option value="Clínico geral">Clínico geral</option>
-                                <option value="Pediatra">Pediatra</option>
-                                <option value="Neurologista">Neurologista</option>
-                                <option value="Endocrinologista">Endocrinologista</option>
-                                <option value="Fisioterapeuta">Fisioterapeuta</option>
-                                <option value="Otorrinolaringologista">Otorrinolaringologista</option>
+                            <label class="input-block">Especialidade</label>
+                            <select id="select-especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                <option selected="selected" value="">Selecione a Especialidade</option>
                             </select>
-                            <span asp-validation-for="MedicoEsp" class="text-danger"></span>
+                        </div>
+
+                        <div class="select-block">
+                            <label class="input-block">Médico</label>
+                            <select asp-for="MedicoId" id="select-medicos">
+                                <option value="">Selecione o Médico</option>
+                            </select>
                         </div>
                         <div class="input-block">
                             <input type="submit" value="Save" class="btn btn-primary" />
@@ -67,10 +66,10 @@
             <div>
                 <a asp-action="Index">Back to List</a>
             </div>
-            </main>
-        </div>
-    </body>
+        </main>
+    </div>
+</body>
 
-            @section Scripts {
-                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
