@@ -20,7 +20,7 @@ namespace ConsultorioGeral.Models
         public string Telefone { get; set; }
         public List<Consulta> Consultas { get; set; }
 
-
+        
         public Paciente()
         {
 

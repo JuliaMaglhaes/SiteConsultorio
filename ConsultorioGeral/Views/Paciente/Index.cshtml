@@ -41,9 +41,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Telefone)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Email)
-                                </th>
+                                
                                 <th></th>
                             </tr>
                         </thread>
@@ -64,9 +62,7 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Telefone)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Email)
-                                    </td>
+                                    
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.PacienteId">
                                             <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />

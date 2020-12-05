@@ -16,45 +16,52 @@
             </div>
 
             <div class="header-content">
-                <strong> Cadastro de Médico </strong>
+                <strong> Médico: @Html.DisplayFor(model => model.Nome) | @Html.DisplayFor(model => model.Especialidade) </strong>
                 <p> Preencha corretamente todos os campos </p>
 
             </div>
         </header>
 
         <main>
-            <hr />
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Nome)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Crm)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Crm)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Especialidade)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Especialidade)
-                </dd>
-            </dl>
-            <footer>
-                <div>
-                    <a asp-action="Edit" asp-route-id="@Model.MedicoId">
-                        <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
-                    </a>
-                    <a asp-action="Index">
-                        Exibir lista
-                    </a>
+            <fieldset>
+                <legend> Seus dados </legend>
 
-                </div>
-            </footer>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Crm)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Crm)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Especialidade)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Especialidade)
+                    </dd>
+                </dl>
+            </fieldset>
+            <!---->
+
+
+
+                <footer>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.MedicoId">
+                            <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
+                        </a>
+                        <a asp-action="Index">
+                            Exibir lista
+                        </a>
+
+                    </div>
+                </footer>
         </main>
     </div>
 

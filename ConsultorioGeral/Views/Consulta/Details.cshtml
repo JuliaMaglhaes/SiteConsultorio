@@ -1,9 +1,9 @@
 ﻿@model ConsultorioGeral.Models.Consulta
+@using ConsultorioGeral.Enums
 
 @{ ViewData["Title"] = "Detalhes | Consulta";
     Layout = "~/Views/Shared/_Layout.cshtml";
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-; }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> ; }
 
 <body id="page-give-classes">
     <div id="container">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="header-content">
-                <strong> Cadastro de Consulta </strong>
+                <strong> Detalhes da consulta </strong>
                 <p> Preencha corretamente todos os campos </p>
 
             </div>
@@ -47,8 +47,13 @@
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => model.Cpf)
                     </dd>
+
                 </dl>
             </div>
+
+            <!---->
+
+            <!---->
             <footer>
                 <div>
                     <a asp-action="Edit" asp-route-id="@Model.ConsultaId">

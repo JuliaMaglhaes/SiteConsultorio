@@ -16,98 +16,104 @@
             </div>
 
             <div class="header-content">
-                <strong> Cadastro de Paciente </strong>
+                <strong> Cadastro do Paciente: @Html.DisplayFor(model => model.Nome)  </strong>
                 <p> Preencha corretamente todos os campos </p>
 
             </div>
         </header>
 
         <main>
+            <fieldset>
+                <legend> Seus dados </legend>
 
-            <div>
-                <h4>Paciente</h4>
-                <hr />
 
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Nome)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Nome)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Cpf)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Cpf)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Idade)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Idade)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Email)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Email)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Sexo)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Sexo)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Endereco)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Endereco)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Cep)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Cep)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Telefone)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Telefone)
-                    </dd>
-                </dl>
-            </div>
-            </br>
-            <p> Consultas marcadas </p>
+                <div>
+
+                    
+
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Nome)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Cpf)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Cpf)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Idade)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Idade)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Sexo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Sexo)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Endereco)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Endereco)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Cep)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Cep)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </dd>
+                    </dl>
+                </div>
+                </br>
+            </fieldset>
+            <fieldset>
+                <legend> Consultas Marcadas </legend>
+            </fieldset>
             <div class="row">
                 @foreach (var consulta in consultas)
                 {
-                <div>
+        <div>
 
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => consulta.Medico.Nome)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => consulta.Medico.Nome)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => consulta.Sintomas)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => consulta.Sintomas)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => consulta.Data)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => consulta.Data)
-                    </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => consulta.Medico.Nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => consulta.Medico.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => consulta.Sintomas)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => consulta.Sintomas)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => consulta.Data)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => consulta.Data)
+            </dd>
 
 
-                   
-                </div>}
+
+        </div>}
             </div>
             <footer>
                 <div>
