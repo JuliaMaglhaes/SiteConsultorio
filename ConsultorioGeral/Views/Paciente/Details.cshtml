@@ -2,7 +2,7 @@
 @using ConsultorioGeral.Models
 @{ ViewData["Title"] = "Detalhes | Paciente";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">;
     List<Consulta> consultas = ViewBag.Consultas; }
 
 <body id="page-give-classes">
@@ -27,6 +27,7 @@
             <div>
                 <h4>Paciente</h4>
                 <hr />
+
                 <dl class="row">
                     <dt class="col-sm-2">
                         @Html.DisplayNameFor(model => model.Nome)
@@ -78,14 +79,35 @@
                     </dd>
                 </dl>
             </div>
-            <div>
+            </br>
+            <p> Consultas marcadas </p>
+            <div class="row">
                 @foreach (var consulta in consultas)
                 {
-    <div>
-        <p>@consulta.Medico.Nome</p>
-        <p>@consulta.Sintomas</p>
-        <p>@consulta.Data</p>
-    </div>}
+                <div>
+
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Medico.Nome)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Medico.Nome)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Sintomas)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Sintomas)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Data)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Data)
+                    </dd>
+
+
+                   
+                </div>}
             </div>
             <footer>
                 <div>
@@ -99,8 +121,6 @@
     </div>
 
     <!---->
- 
-
-            <!---->
-    </body>
+    <!---->
+</body>
 
