@@ -16,14 +16,13 @@ namespace ConsultorioGeral.Models
             {
                 Data = DateTime.Now,
                 Sintomas = "Descrição dos sintomas",
-                Cpf = "123456789101",
-                MedicoEsp = "Clinico Geral",
+                Cpf = "123456789101"
             }
         };
 
         public async Task<Consulta> GravarConsulta(Consulta consulta)
         {
-            
+
             consultas.Add(consulta);
             return consulta;
         }

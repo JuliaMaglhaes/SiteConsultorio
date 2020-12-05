@@ -1,7 +1,7 @@
-﻿@model Consulta
-@{
-    ViewData["Title"] = "Consulta";
-}
+﻿@model ConsultorioGeral.Models.Consulta
+@using ConsultorioGeral.Enums
+
+@{ ViewData["Title"] = "Marcar | Consulta ";}
 
 <body id="page-give-classes">
     <div id="container">
@@ -10,103 +10,70 @@
                 <a href="/">
                     <img src="~/img/back.svg">
                 </a>
-                <img src="#">
+                <img src="~/img/warning.svg">
             </div>
-            
+
             <div class="header-content">
-                <strong> Marcar uma consulta </strong>
-                <p>
-                    Preencha todos os campos
-                    para marcar sua consulta
-                </p>
+                <strong> Cadastro de consulta </strong>
+                <p> Preencha corretamente todos os campos </p>
+
             </div>
         </header>
 
         <main>
-            <form action="" id="create-class">
-                <fieldset>
-                    <legend> Seus dados </legend>
 
-                    <div class="input-block">
-                        <label asp-for="Data" class="input-block"></label>
-                        <input asp-for="Data" type="datetime" class="form-control" />
-                        <span asp-validation-for="Data" class="text-danger"></span>
-                    </div>
-                    <div class="input-block">
-                        <label asp-for="Sintomas" class="control-label"></label>
-                        <input asp-for="Sintomas" type="text" class="form-control" />
-                        <span asp-validation-for="Sintomas" class="text-danger"></span>
-                    </div>
-                    <div class="input-block">
-                        <label asp-for="Cpf" class="control-label"></label>
-                        <input asp-for="Cpf" class="form-control" />
-                        <span asp-validation-for="Cpf" class="text-danger"></span>
-                    </div>
-                    <div class="select-block">
-                        <label asp-for="MedicoEsp" class="control-label"></label>
-                        <select asp-for="MedicoEsp" id="sexo" required>
-                            <option value="">Escolha uma opção</option>
-                            <option value="Clínico geral">Clínico geral</option>
-                            <option value="Pediatra">Pediatra</option>
-                            <option value="Neurologista">Neurologista</option>
-                            <option value="Endocrinologista">Endocrinologista</option>
-                            <option value="Fisioterapeuta">Fisioterapeuta</option>
-                            <option value="Otorrinolaringologista">Otorrinolaringologista</option>
-                        </select>
-                        <span asp-validation-for="MedicoEsp" class="text-danger"></span>
-                    </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <fieldset>
+                            <legend> Seus dados </legend>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="input-block">
+                                <label asp-for="Data" class="input-block"></label>
+                                <input asp-for="Data" type="datetime-local" class="form-control" />
+                                <span asp-validation-for="Data" class="text-danger"></span>
+                            </div>
+                            <div class="input-block">
+                                <label asp-for="Sintomas" class="input-block"></label>
+                                <textarea asp-for="Sintomas" class="form-control"> </textarea>
+                                <span asp-validation-for="Sintomas" class="text-danger"></span>
+                            </div>
+                            <div class="input-block">
+                                <label asp-for="Cpf" class="input-block"></label>
+                                <input asp-for="Cpf" class="form-control" />
+                                <span asp-validation-for="Cpf" class="text-danger"></span>
+                            </div>
+                            <div class="select-block">
+                                <label class="input-block">Especialidade</label>
+                                <select id="select-especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                    <option selected="selected" value="">Selecione a Especialidade</option>
+                                </select>
+                            </div>
 
-                </fieldset>
+                            <div class="select-block">
+                                <label class="input-block">Médico</label>
+                                <select asp-for="MedicoId" id="select-medicos">
+                                    <option value="">Selecione o Médico</option>
+                                </select>
+                            </div>
 
-
-                <fieldset>
-
-                    <legend>
-                        Horários disponíveis
-                       
-                    </legend>
-                    <div class="schedule-item">
-                        <div class="select-block">
-                            <label for="weekday"> Dia da semana </label>
-                            <select name="weekday[]" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="0">Domingo</option>
-                                <option value="1">Segunda</option>
-                                <option value="2">Terça</option>
-                                <option value="3">Quarta</option>
-                                <option value="4">Quinta</option>
-                                <option value="5">Sexta</option>
-                                <option value="6">Sabádo</option>
-
-                            </select>
-                        </div>
-
-                        <div class="input-block">
-                            <label for="time_from"> Horário </label>
-                            <input type="time" name="time_from[]" required>
-                        </div>
-
-
-                    </div>
-
-                </fieldset>
-            </form>
-
-            <footer>
-
-                <p>
-                    <img src="~/img/warning.svg" alt="aviso">
-                    Importante! <br>
-                    Preencha todos os dados
-                </p>
-                <input type="submit"
-                       class="btn btn-sucess"
-                       value="Finalizar cadastro" />
-                <a asp-action="Index" class="btn btn-info">Retornar consultas </a>
-
-            </footer>
+                        </fieldset>
+                        <footer>
+                            <div class="input-block">
+                                <input type="submit" value="Marcar Consulta" class="btn btn-primary" />
+                                <a asp-action="Index">Visualizar consultas agendadas</a>
+                            </div>
+                        </footer>
+                    </form>
+                </div>
+            </div>
 
 
         </main>
     </div>
 </body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
