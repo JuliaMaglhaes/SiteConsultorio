@@ -73,7 +73,8 @@ namespace ConsultorioGeral.Controllers
         }
 
 
-        
+
+
 
         public async Task<IActionResult> Details(long? Id)
         {

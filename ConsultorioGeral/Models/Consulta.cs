@@ -14,7 +14,8 @@ namespace ConsultorioGeral.Models
         public string Sintomas { get; set; }
         public string Cpf { get; set; }
 
-        public string? Descricao { get; set; }
+        
+       // public string? Descricao { get; set; }
 
         [ForeignKey("Paciente")]
         public long? PacienteId { get; set; }

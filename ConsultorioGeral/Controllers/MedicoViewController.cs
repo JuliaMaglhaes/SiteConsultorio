@@ -51,6 +51,8 @@ namespace ConsultorioGeral.Controllers
             return View(medico);
         }
 
+
+
         public async Task<IActionResult> Details(long? Id)
         {
             if (Id == null)
