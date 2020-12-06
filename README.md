@@ -1,4 +1,9 @@
 # Site-Consultorio
+
+<h1 align="center">
+  <img alt="SiteConsultório" title="#Consultóriok" src="https://imgur.com/a/mC49DcO" />
+</h1>
+
 ![Badge](https://img.shields.io/github/stars/JuliaMaglhaes/SiteConsultorio?style=social)
 ![Badge](https://img.shields.io/github/forks/JuliaMaglhaes/SiteConsultorio)
 
