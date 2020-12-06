@@ -2,8 +2,8 @@
 Uma plataforma voltada a realização de cadastramento de pacientes, médicos e marcação de consultas.
 Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. 
 
-<img src="https://img.shields.io/static/v1?label=ASPNET-CORE&message=CSharp&color=#0000&style=plastic&logo=https://simpleicons.org/icons/csharp.svg/>
-
+![Badge](https://img.shields.io/github/stars/JuliaMaglhaes/SiteConsultorio?style=social)
+![Badge](https://img.shields.io/github/forks/JuliaMaglhaes/SiteConsultorio)
 
 ### Features
 
