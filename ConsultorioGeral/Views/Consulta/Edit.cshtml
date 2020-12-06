@@ -26,39 +26,47 @@
             <div class="row">
                 <div class="col-md-4">
                     <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="ConsultaId" />
-                        <div class="input-block">
-                            <label asp-for="Data" class="input-block"></label>
-                            <input asp-for="Data" type="datetime" class="form-control" />
-                            <span asp-validation-for="Data" class="text-danger"></span>
-                        </div>
-                        <div class="input-block">
-                            <label asp-for="Sintomas" class="control-label"></label>
-                            <input asp-for="Sintomas" type="text" class="form-control" />
-                            <span asp-validation-for="Sintomas" class="text-danger"></span>
-                        </div>
-                        <div class="input-block">
-                            <label asp-for="Cpf" class="control-label"></label>
-                            <input asp-for="Cpf" class="form-control" />
-                            <span asp-validation-for="Cpf" class="text-danger"></span>
-                        </div>
-                        <div class="select-block">
-                            <label class="input-block">Especialidade</label>
-                            <select id="select-especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
-                                <option selected="selected" value="">Selecione a Especialidade</option>
-                            </select>
-                        </div>
+                        <fieldset>
+                            <legend> Dados da consulta </legend>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="ConsultaId" />
+                            <div class="input-block">
+                                <label asp-for="Data" class="input-block"></label>
+                                <input asp-for="Data" type="datetime" class="form-control" />
+                                <span asp-validation-for="Data" class="text-danger"></span>
+                            </div>
+                            <div class="input-block">
+                                <label asp-for="Sintomas" class="control-label"></label>
+                                <input asp-for="Sintomas" type="text" class="form-control" />
+                                <span asp-validation-for="Sintomas" class="text-danger"></span>
+                            </div>
+                            <div class="input-block">
+                                <label asp-for="Cpf" class="control-label"></label>
+                                <input asp-for="Cpf" class="form-control" />
+                                <span asp-validation-for="Cpf" class="text-danger"></span>
+                            </div>
+                            <div class="select-block">
+                                <label class="input-block">Especialidade</label>
+                                <select id="select-especialidade" asp-items="Html.GetEnumSelectList<Especialidade>()">
+                                    <option selected="selected" value="">Selecione a Especialidade</option>
+                                </select>
+                            </div>
 
-                        <div class="select-block">
-                            <label class="input-block">Médico</label>
-                            <select asp-for="MedicoId" id="select-medicos">
-                                <option value="">Selecione o Médico</option>
-                            </select>
-                        </div>
-                        <div class="input-block">
-                            <input type="submit" value="Save" class="btn btn-primary" />
-                        </div>
+                            <div class="select-block">
+                                <label class="input-block">Médico</label>
+                                <select asp-for="MedicoId" id="select-medicos">
+                                    <option value="">Selecione o Médico</option>
+                                </select>
+                            </div>
+                            <div class="input-block">
+                                <label asp-for="Descricao" class="control-label"></label>
+                                <input asp-for="Descricao" class="form-control" />
+                                <span asp-validation-for="Descricao" class="text-danger"></span>
+                            </div>
+                            </fieldset>
+                            <div class="input-block">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
                     </form>
                 </div>
             </div>

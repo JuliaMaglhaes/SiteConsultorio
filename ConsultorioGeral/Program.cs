@@ -26,7 +26,6 @@ namespace ConsultorioGeral
                     PacienteDbInitializer.Initialize(context);
                     MedicoDbInitializer.Initialize(context);
                     ConsultaDbInitializer.Initialize(context);
-                    DiagnosticoDbInitializer.Initialize(context);
 
 
                 }

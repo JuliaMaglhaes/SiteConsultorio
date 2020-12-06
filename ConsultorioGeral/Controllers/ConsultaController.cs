@@ -39,6 +39,7 @@ namespace ConsultorioGeral.Controllers
             return Json(new { data = medicosDisponiveis });
         }
 
+
         public IActionResult Create()
         {
             return View();
@@ -70,6 +71,9 @@ namespace ConsultorioGeral.Controllers
 
             return View(consulta);
         }
+
+
+        
 
         public async Task<IActionResult> Details(long? Id)
         {

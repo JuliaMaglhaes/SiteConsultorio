@@ -90,30 +90,31 @@
             <div class="row">
                 @foreach (var consulta in consultas)
                 {
-        <div>
+                <div>
 
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => consulta.Medico.Nome)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => consulta.Medico.Nome)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => consulta.Sintomas)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => consulta.Sintomas)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => consulta.Data)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => consulta.Data)
-            </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Medico.Nome)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Medico.Nome)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Sintomas)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Sintomas)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => consulta.Data)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => consulta.Data)
+                    </dd>
 
 
 
-        </div>}
+
+                </div>}
             </div>
             <footer>
                 <div>

@@ -1,10 +1,11 @@
 ﻿@model ConsultorioGeral.Models.Medico
 
+
 @{ ViewData["Title"] = "Detalhes | Médico";
     List<Consulta> consultas = ViewBag.Consultas;
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-     }
+}
 
 ;}
 
@@ -52,7 +53,7 @@
             </fieldset>
 
             <fieldset>
-                <legend> Consultas marcadas para @Html.DisplayFor(model => model.Nome) </legend>
+                <legend> Consultas marcadas com @Html.DisplayFor(model => model.Nome) </legend>
                 <div class="row">
                     @foreach (var consulta in consultas)
                     {
@@ -79,25 +80,33 @@
 
 
 
-                        </div>}
+                        </div>
+
+                       
+
+                    }
+
+
+</fieldset>
+
+
+
+            <footer>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.MedicoId">
+                        <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
+                    </a>
+                    <a asp-action="Index">
+                        Exibir lista
+                    </a>
+
                 </div>
 
-                </fieldset>
-
-                <footer>
-                    <div>
-                        <a asp-action="Edit" asp-route-id="@Model.MedicoId">
-                            <img src="~/img/editButton.svg" width="42" height="42" alt="Editar" />
-                        </a>
-                        <a asp-action="Index">
-                            Exibir lista
-                        </a>
-
-                    </div>
-                </footer>
+            </footer>
         </main>
     </div>
 
 
 
 </body>
+
