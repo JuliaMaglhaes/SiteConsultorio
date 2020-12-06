@@ -5,7 +5,14 @@
 ### Sobre o projeto
 
 Uma plataforma voltada a realização de cadastramento de pacientes, médicos e marcação de consultas.
-Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. 
+Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. O Projeto Consultório foi um projeto organizado e desenvolvido pelos
+alunos Antonio Sérgio, Júlia Magalhães e Marcelo S.Corrêa  do curso de sistemas de informação da Universidadde Geraldo Di Biase 
+para a avaliação do segundo bimestre da disciplina linguagem técnica de programação 3 que é presedida pelo professor Rosenclever Gazoni.
+
+### Objetivos do Projeto
+
+O Projeto tem como objetivo a realização do CRUD (Create, Read ,Update e Delete) nas tabelas Paciente, Médico e Consultas que 
+estão presentes dentro do banco de dados SiteConsultorioDatabase. Com o cadastramento de novos pacientes , médicos e marcação de consultas.
 
 ### Features
 
@@ -27,6 +34,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Visual Studio Comunnity 2019](https://visualstudio.microsoft.com/pt-br/vs/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+
+### Autores
+
+### Licenças
+
 
 
 
