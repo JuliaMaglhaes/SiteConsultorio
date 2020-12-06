@@ -1,6 +1,6 @@
 ﻿/* Inicio style.css*/
 :root {
-    --color-landing: #433c54 /**#00995D*/;
+    --color-landing: #00995D;
     --color-btn-central: #f2f2f2;
     --color-background: #F0F0F7;
     --color-primary-lighter: #04D361;
@@ -345,10 +345,10 @@ textarea {
 
     /* Inicio page landing */
 
-#page-landing {
-    background: var(--color-landing);
-    margin-top: 50px;
-}
+    #page-landing {
+        background: var(--color-landing);
+        margin-top: 50px;
+    }
 
         #page-landing #container {
             color: var(--color-text-in-primary);
