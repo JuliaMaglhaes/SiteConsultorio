@@ -1,7 +1,7 @@
 # Site-Consultorio
 
 <h1 align="center">
-  <img alt="SiteConsultório" title="#Consultóriok" src="https://imgur.com/a/mC49DcO" />
+  <img alt="SiteConsultório" title="#Consultório" src="https://i.imgur.com/ufaYKzb.png" />
 </h1>
 
 ![Badge](https://img.shields.io/github/stars/JuliaMaglhaes/SiteConsultorio?style=social)
