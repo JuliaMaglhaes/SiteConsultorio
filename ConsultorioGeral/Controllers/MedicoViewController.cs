@@ -57,12 +57,30 @@ namespace ConsultorioGeral.Controllers
             {
                 return NotFound();
             }
+
+            var medico = await _context.Medicos
+                .Include(x => x.Consultas)
+                .SingleOrDefaultAsync(a => a.MedicoId == Id);
+
+            ViewBag.Consultas = _context.Consultas
+                .Include(x => x.Medico)
+                .Include(x => x.Paciente)
+                .Where(a => a.MedicoId == Id).ToList();
+
+            if (medico == null)
+            {
+                return NotFound();
+
+            }
+            return View(medico);
+            /*
             var medico = await _context.Medicos.SingleOrDefaultAsync(a => a.MedicoId == Id);
             if (medico == null)
             {
                 return NotFound();
             }
             return View(medico);
+            */
         }
 
         public async Task<IActionResult> Edit(long? Id)

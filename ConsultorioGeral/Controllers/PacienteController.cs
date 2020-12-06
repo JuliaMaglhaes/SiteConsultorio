@@ -21,10 +21,14 @@ namespace academico.Controllers
         {
             _context = context;
         }
+
+        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Pacientes.OrderBy(a => a.Nome).ToListAsync());
         }
+        
+
 
         public IActionResult Create()
         {
