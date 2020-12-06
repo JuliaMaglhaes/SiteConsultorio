@@ -1,9 +1,11 @@
 # Site-Consultorio
-Uma plataforma voltada a realização de cadastramento de pacientes, médicos e marcação de consultas.
-Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. 
-
 ![Badge](https://img.shields.io/github/stars/JuliaMaglhaes/SiteConsultorio?style=social)
 ![Badge](https://img.shields.io/github/forks/JuliaMaglhaes/SiteConsultorio)
+
+### Sobre o projeto
+
+Uma plataforma voltada a realização de cadastramento de pacientes, médicos e marcação de consultas.
+Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. 
 
 ### Features
 
@@ -25,5 +27,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Visual Studio Comunnity 2019](https://visualstudio.microsoft.com/pt-br/vs/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+
 
 
