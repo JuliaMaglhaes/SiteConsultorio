@@ -1,0 +1,46 @@
+﻿@model ConsultorioGeral.Models.Diagnostico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<body id="page-give-classes">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="~/img/back.svg">
+                </a>
+                <img src="~/img/warning.svg">
+            </div>
+
+            <div class="header-content">
+                <strong> Detalhes da consulta </strong>
+                <p> Preencha corretamente todos os campos </p>
+
+            </div>
+        </header>
+
+        <main>
+
+            <fieldset>
+                <legend> Dados coletados </legend>
+
+                <div>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Descricao)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Descricao)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.DiagnosticoId">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
+                </fieldset>
+            </main>
+        </div>
+    </body>

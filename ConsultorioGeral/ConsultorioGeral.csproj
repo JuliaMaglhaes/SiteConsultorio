@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Especialidade\**" />
+    <Content Remove="Views\Especialidade\**" />
+    <EmbeddedResource Remove="Views\Especialidade\**" />
+    <None Remove="Views\Especialidade\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -23,10 +30,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="PdfSharp" Version="1.50.5147" />
     <PackageReference Include="PdfSharpCore" Version="1.2.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Especialidade\" />
   </ItemGroup>
 
 </Project>
