@@ -345,10 +345,18 @@ textarea {
 
     /* Inicio page landing */
 
+/*
     #page-landing {
         background: var(--color-landing);
         margin-top: 50px;
     }
+        */
+
+#page-landing {
+    background-color: #1e1829;
+    margin-top: 50px;
+
+}
 
         #page-landing #container {
             color: var(--color-text-in-primary);
@@ -434,6 +442,16 @@ textarea {
             grid-template-areas: "proffy image image" "button button texting";
             column-gap: 87px;
             row-gap: 86px;
+        }
+
+        #page-landing{
+            background-image: url(../img/imagem.png);
+            background-size:100%;
+            
+        }
+
+        .hero-image {
+            display: none;
         }
 
         .logo-container {
