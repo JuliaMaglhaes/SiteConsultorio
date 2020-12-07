@@ -11,7 +11,7 @@
 
 Uma plataforma voltada a realização de cadastramento de pacientes, médicos e marcação de consultas.
 Desenvolvida em C# com ASPNET-CORE 5 e SQL SERVER. O Projeto Consultório foi um projeto organizado e desenvolvido pelos
-alunos Antonio Sérgio, Júlia Magalhães e Marcelo S.Corrêa  do curso de sistemas de informação da Universidadde Geraldo Di Biase 
+alunos: Antonio Sérgio, Júlia Magalhães e Marcelo S.Corrêa, ambos do curso de sistemas de informação na Universidadde Geraldo Di Biase, 
 para a avaliação do segundo bimestre da disciplina linguagem técnica de programação 3 que é presedida pelo professor Rosenclever Gazoni.
 
 ### Objetivos do Projeto
