@@ -110,6 +110,18 @@
                     <dd class="col-sm-10">
                         @Html.DisplayFor(model => consulta.Data)
                     </dd>
+                    <dt class="col-sm-2">
+                        @if (!string.IsNullOrEmpty(consulta.Diagnostico))
+                        {
+
+                        @Html.DisplayNameFor(model => consulta.Diagnostico)}
+                    </dt>
+                    <dd class="col-sm-10">
+                        @if (!string.IsNullOrEmpty(consulta.Diagnostico))
+                        {
+
+                        @Html.DisplayFor(model => consulta.Diagnostico)}
+                    </dd>
 
 
 
