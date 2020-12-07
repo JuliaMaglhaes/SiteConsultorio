@@ -48,8 +48,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Autores
 
-
-
+<h1 align="center">
+  <img alt="Equipe" title="#Equipe" src="https://i.imgur.com/f7SgHFq.png" />
+</h1>
 
 ### Licenças
 
