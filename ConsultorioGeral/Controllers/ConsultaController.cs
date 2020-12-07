@@ -12,7 +12,6 @@ using ConsultorioGeral.Models;
 using Microsoft.Data.Sql;
 using Microsoft.Data.SqlClient;
 using System.IO;
-using PdfSharp.Drawing;
 using System.Diagnostics;
 using ConsultorioGeral.Enums;
 
