@@ -44,6 +44,7 @@ namespace ConsultorioGeral
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    
                 });
     }
 }
