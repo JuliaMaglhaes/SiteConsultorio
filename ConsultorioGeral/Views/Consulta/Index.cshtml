@@ -21,7 +21,10 @@
         </header>
 
         <main>
-            <a asp-action="Create">Cadastrar nova consulta</a>
+            <center>
+                <a asp-action="Create">Cadastrar nova consulta</a>
+            </center>
+            <br />
             <center>
                 <table class="pure-table">
                     <thead>
@@ -42,33 +45,39 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Data)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sintomas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cpf)
-                </td>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Data)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sintomas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cpf)
+                                </td>
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ConsultaId">
-                        <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
-                    </a>
-                    <a asp-action="Details" asp-route-id="@item.ConsultaId">
-                        <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
-                    </a>
-                    <a asp-action="Delete" asp-route-id="@item.ConsultaId">
-                        <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
-                    </a>
-                    
-                </td>
-            </tr>}
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ConsultaId">
+                                        <img src="~/img/editButton.svg" width="36" height="36" alt="Editar" />
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.ConsultaId">
+                                        <img src="~/img/detailsButton.svg" width="36" height="36" alt="Ver Detalhes" />
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.ConsultaId">
+                                        <img src="~/img/deleteButton.svg" width="36" height="36" alt="Excluir" />
+                                    </a>
+
+                                </td>
+                            </tr>
+}
                     </tbody>
                 </table>
             </center>
+            <br />
+            <br />
+            <hr />
+
         </main>
     </div>
+    
 </body>
