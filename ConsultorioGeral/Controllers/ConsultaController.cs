@@ -53,6 +53,7 @@ namespace ConsultorioGeral.Controllers
             {
                 consulta.Paciente = _context.Pacientes.FirstOrDefault(p => p.Cpf == (consulta.Cpf));
 
+                
                 if (consulta.Paciente == null)
                     ModelState.AddModelError("Cpf", "Não existe nenhum paciente cadastrado com este CPF");
 

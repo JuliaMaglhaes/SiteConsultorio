@@ -41,6 +41,10 @@ namespace academico.Controllers
         {
             try
             {
+                if (paciente.Cpf.Length != 11)
+                {
+                    ModelState.AddModelError("Cpf", "CPF inválido");
+                }
                 if (ModelState.IsValid)
                 {
                     _context.Add(paciente);

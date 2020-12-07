@@ -22,6 +22,7 @@ namespace ConsultorioGeral.Controllers
         {
             try
             {
+                
                 if (ModelState.IsValid)
                 {
                     await pacienteDao.GravarPaciente(paciente);
