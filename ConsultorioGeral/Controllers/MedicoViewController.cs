@@ -21,6 +21,21 @@ namespace ConsultorioGeral.Controllers
         {
             _context = context;
         }
+
+        [HttpPost]
+        public JsonResult ResponderDiagnostico(long consultaId, string diagnostico)
+        {
+            var consulta = _context.Consultas.Find(consultaId);
+            if(consulta == null)
+                return Json(new { status = false});
+
+            consulta.Diagnostico = diagnostico;
+            _context.Consultas.Update(consulta);
+            _context.SaveChanges();
+
+            return Json(new { status = true });
+        }
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Medicos.OrderBy(a => a.Nome).ToListAsync());

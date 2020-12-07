@@ -13,8 +13,8 @@ namespace ConsultorioGeral.Models
         public DateTime Data { get; set ;}
         public string Sintomas { get; set; }
         public string Cpf { get; set; }
+        public string Diagnostico { get; set; }
 
-        
        // public string? Descricao { get; set; }
 
         [ForeignKey("Paciente")]

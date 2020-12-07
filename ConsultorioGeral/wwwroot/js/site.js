@@ -23,3 +23,25 @@
         }
     });
 });
+
+//JS PARA RESPOSTA DE DIAGNOSTICO
+
+$(".enviar-diagnostico").click(function () {
+    console.log('cliquei')
+    let diagnostico = $(".diagnostico-medico").val();
+    let consultaId = $(this).data("id");
+    console.log(diagnostico)
+    console.log(consultaId)
+
+    $.ajax({
+        url: '/MedicoView/ResponderDiagnostico',
+        data: {
+            consultaId: consultaId,
+            diagnostico: diagnostico
+        },
+        type: 'POST',
+        success: function (result) {
+            location.reload();
+        }
+    });
+});
