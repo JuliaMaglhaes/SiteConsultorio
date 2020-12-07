@@ -6,6 +6,9 @@
 
 ![Badge](https://img.shields.io/github/stars/JuliaMaglhaes/SiteConsultorio?style=social)
 ![Badge](https://img.shields.io/github/forks/JuliaMaglhaes/SiteConsultorio)
+![Badge](https://img.shields.io/badge/-CSharp-green)
+![Badge](https://img.shields.io/badge/-ASPNET--CORE-%237154FF)
+![Badge](https://img.shields.io/badge/-SQL%20Server-4AA1F2)
 
 ### Sobre o projeto
 
@@ -25,6 +28,7 @@ estão presentes dentro do banco de dados SiteConsultorioDatabase. Com o cadastr
 - [x] Cadastro de Médicos
 - [x] Cadastro de Consultas
 
+
 ### 🛠 Tecnologias
 
 As seguintes técnologias foram usadas na construção do projeto:
@@ -41,6 +45,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ### Autores
+
+
 
 ### Licenças
 
