@@ -33,4 +33,14 @@
     <PackageReference Include="PdfSharpCore" Version="1.2.9" />
   </ItemGroup>
 
+	<!-- Custom Property Group added to add the Environment name during publish
+  The EnvironmentName property is used during the publish for the Environment variable in web.config
+  -->
+	<PropertyGroup Condition=" '$(Configuration)' == '' Or '$(Configuration)' == 'Debug'">
+		<EnvironmentName>Development</EnvironmentName>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' != '' AND '$(Configuration)' != 'Debug' ">
+		<EnvironmentName>Production</EnvironmentName>
+	</PropertyGroup>
+
 </Project>

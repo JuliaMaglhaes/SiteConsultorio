@@ -45,6 +45,7 @@ namespace ConsultorioGeral
                 {
                     webBuilder.UseStartup<Startup>();
                     
+                    
                 });
     }
 }
