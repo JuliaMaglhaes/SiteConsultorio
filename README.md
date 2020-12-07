@@ -43,8 +43,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Visual Studio Comunnity 2019](https://visualstudio.microsoft.com/pt-br/vs/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [Figma](https://www.figma.com/)
+- [Canva](https://www.canva.com/)
 
 ### Autores
+
 
 
 
