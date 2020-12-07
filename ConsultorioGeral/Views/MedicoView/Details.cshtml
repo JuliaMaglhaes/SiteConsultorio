@@ -22,7 +22,7 @@
 
             <div class="header-content">
                 <strong> Médico: @Html.DisplayFor(model => model.Nome) | @Html.DisplayFor(model => model.Especialidade) </strong>
-                <p> Preencha corretamente todos os campos </p>
+                <p> Verifique todos os campos </p>
 
             </div>
         </header>
@@ -101,7 +101,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Diagnóstico</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -111,13 +111,15 @@
                                                 <p>Sintomas: @consulta.Sintomas</p>
                                                 <br />
                                                 <p>Escreva seu diagnóstico</p>
-                                                <textarea class="diagnostico-medico" name="diagnostico"></textarea>
+                                                <div class="textarea-block">
+                                                    <textarea class="diagnostico-medico" name="diagnostico"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <button type="button" class="btn btn-primary enviar-diagnostico" data-id="@consulta.ConsultaId">Enviar</button>
+                                                </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary enviar-diagnostico" data-id="@consulta.ConsultaId">Enviar</button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             }
