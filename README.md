@@ -52,6 +52,13 @@ Você será redirecionado a nosso deploy no Heroku.
   </a>
 </h1>
 
+
+### Diagramas
+
+<h1 align="center">
+  <img alt="SiteConsultório" title="#Consultório" src="https://i.imgur.com/Hzpp9nn.png" />
+</h1>
+
 ### 🛠 Tecnologias
 
 As seguintes técnologias foram usadas na construção do projeto:
