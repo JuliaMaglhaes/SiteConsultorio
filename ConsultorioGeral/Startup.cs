@@ -27,7 +27,8 @@ namespace ConsultorioGeral
         {
             services.AddControllersWithViews();
             services.AddDbContext<PacienteContext>(options => options.UseSqlServer
-                (Configuration.GetConnectionString("ConsultorioConnection")));
+            (Configuration.GetConnectionString("ConsultorioConnection")));
+            
 
         }
 

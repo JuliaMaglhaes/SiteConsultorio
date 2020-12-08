@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/ConsultorioGeral",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:54254",
       "sslPort": 44388
@@ -16,7 +20,7 @@
       }
     },
     "ConsultorioGeral": {
-      "commandName": "Project",
+      "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
