@@ -48,7 +48,7 @@ Você será redirecionado a nosso deploy no Heroku.
 
 <h1 align="center">
    <a href= "https://consultoriocadastr.herokuapp.com/" >
-  <img alt="O PROJETO" title="#Visite" src="https://i.imgur.com/V9lhQjk.png" />
+  <img alt="O PROJETO" title="#Visite" src="https://i.imgur.com/tjmFAne.png" />
   </a>
 </h1>
 
