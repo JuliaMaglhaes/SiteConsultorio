@@ -28,6 +28,16 @@ estão presentes dentro do banco de dados SiteConsultorioDatabase. Com o cadastr
 - [x] Cadastro de Médicos
 - [x] Cadastro de Consultas
 
+### Visualização do Projeto
+
+Para acessar a plataforma Consultório clique na imagem abaixo. 
+Vcê será redirecionado até o nosso deploy no Heroku.
+
+<h1 align="center">
+   <a href= "https://consultoriocadastr.herokuapp.com/" >
+  <img alt="O PROJETO" title="#Visite" src="https://i.imgur.com/V9lhQjk.png" />
+  </a>
+</h1>
 
 ### 🛠 Tecnologias
 
