@@ -22,6 +22,19 @@ para a avaliação do segundo bimestre da disciplina linguagem técnica de progr
 O Projeto tem como objetivo a realização do CRUD (Create, Read ,Update e Delete) nas tabelas Paciente, Médico e Consultas que 
 estão presentes dentro do banco de dados SiteConsultorioDatabase. Com o cadastramento de novos pacientes , médicos e marcação de consultas.
 
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com) e também o [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/pt-br/vs/) Ou
+se optar utilizar o [Visual Studio Code](https://code.visualstudio.com/).
+
+<b>Utilizando o Visual Studio 2019:</b>
+Configure todo o ambiente instalando as dependencias nescessarias sendo elas: ASPNET-CORE 5 MVC , SQL Server , Entity Framework 5.0.
+
+<b>Utilizando O Visual Studio Code:</b>
+Para configurar o ambiente de desenvolvimento no Visual Studio Code 
+siga este tutorial: [ASPNET-VSCODE](https://medium.com/danielpadua/vscode-asp-net-core-preparar-ambiente-de-desenvolvimento-adf30cefea07)
+
 ### Features
 
 - [x] Cadastro de Pacientes
@@ -31,7 +44,7 @@ estão presentes dentro do banco de dados SiteConsultorioDatabase. Com o cadastr
 ### Visualização do Projeto
 
 Para acessar a plataforma Consultório clique na imagem abaixo. 
-Vcê será redirecionado até o nosso deploy no Heroku.
+Você será redirecionado a nosso deploy no Heroku.
 
 <h1 align="center">
    <a href= "https://consultoriocadastr.herokuapp.com/" >
@@ -72,6 +85,4 @@ A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cóp
 O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
 
 O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA", SEM QUALQUER TIPO DE GARANTIA, EXPRESSA OU IMPLÍCITA, INCLUINDO MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO. EM NENHUMA HIPÓTESE OS AUTORES OU TITULARES DOS DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, DELITO OU DE OUTRA FORMA, DECORRENTE DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO PROGRAMAS.
-
-LICENÇA - MIT
 
