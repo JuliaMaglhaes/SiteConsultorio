@@ -56,7 +56,7 @@ Você será redirecionado a nosso deploy no Heroku.
 ### Diagramas
 
 <h1 align="center">
-  <img alt="SiteConsultório" title="#Consultório" src="https://i.imgur.com/Hzpp9nn.png" />
+  <img alt="SiteConsultório" title="#Consultório" src="https://i.imgur.com/yOHZVLE.png" />
 </h1>
 
 ### 🛠 Tecnologias
